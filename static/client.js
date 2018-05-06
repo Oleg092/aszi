@@ -1,0 +1,1 @@
+/*this file for client code on javascript*/
