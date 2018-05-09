@@ -1,5 +1,37 @@
 /*this file for style*/
-#checkstatic{
-    position: absolute;
-    left: 400px;
+body{
+    max-width: 960px;
+    background-color: #937697;
+}
+#tittle{
+    position: relative;
+    left: 10%;
+    top: 20px;
+    color: rgba(21, 172, 20, 0.78); /* Цвет символа */
+    font-size: 200%; /* Размер шрифта */
+}
+#signPanel{
+    position: relative;
+    left: 65%;
+    height: 460px;
+    width: 360px;
+}
+#labelLogIn{
+    position: relative;
+    top: 25%;
+}
+#buttonSignIn{
+    position: relative;
+    top: 10px;
+    width: 100%;
+}
+#formSign{
+    position: relative;
+    top: 30%;
+
+}
+#forgotPas{
+    position: relative;
+    top: 10px;
+    width: 100%;
 }

@@ -1,10 +1,46 @@
-<html>
-<head>
+{% extends 'landing/base.html' %}
+{% block title %}
+    ASZI PROJECT
+{% endblock %}
+{% load static %}
+{% block content %}
+ <div id="content"></div>
 
-    {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static "/style.css" %}">
-</head>
-<body>
-<h1 id = "checkstatic">hello world!</h1>
-</body>
-</html>
+    <script  type = "text/babel">
+        var reg = React.createClass ({
+            checkParams: function() {
+                var email = document.getElementById("email").value;
+                var pas = document.getElementById("pas").value;
+                if (email.length != 0 && pas.length >= 6) {
+                    document.getElementById("buttonSignIn").removeAttribute('disabled');
+                }
+                else {
+                    document.getElementById("buttonSignIn").setAttribute('disabled', 'disabled');
+                }
+            },
+            render: function () {
+                return (
+                    <div><h1 id="tittle">aszi project</h1>
+                        <div id="signPanel">
+                            <h1 id="labelLogIn">Login to aszi project</h1>
+                            <form id="formSign" method="POST">
+                                <div><input id="email" onKeyUp={this.checkParams} className="form-control" type="Email"
+                                            placeholder="E-mail"></input></div>
+                                <div><input id="pas" onKeyUp={this.checkParams} className="form-control"
+                                            type="Password"
+                                            placeholder="Password"></input></div>
+                                <button id="buttonSignIn" className="btn btn-success btn-lg" disabled>Sign In
+                                </button>
+                                <a id="forgotPas" href="#">Забыли пароль?</a>
+                                </form>
+                            </div>
+                        </div>
+                );
+            }
+        });
+    const redForm = document.getElementById("content");
+
+    ReactDOM.render(React.createElement(reg), redForm);
+    </script>
+    {% endblock %}
+</ul>
