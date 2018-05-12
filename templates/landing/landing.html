@@ -23,10 +23,10 @@
                     <div><h1 id="tittle">aszi project</h1>
                         <div id="signPanel">
                             <h1 id="labelLogIn">Login to aszi project</h1>
-                            <form id="formSign" method="POST">
-                                <div><input id="email" onKeyUp={this.checkParams} className="form-control" type="Email"
+                            <form id="formSign" method="POST" action="">{% csrf_token %}
+                                <div><input name="email" id="email" onKeyUp={this.checkParams} className="form-control" type="Email"
                                             placeholder="E-mail"></input></div>
-                                <div><input id="pas" onKeyUp={this.checkParams} className="form-control"
+                                <div><input name="pas" id="pas" onKeyUp={this.checkParams} className="form-control"
                                             type="Password"
                                             placeholder="Password"></input></div>
                                 <button id="buttonSignIn" className="btn btn-success btn-lg" disabled>Sign In
@@ -41,6 +41,17 @@
     const redForm = document.getElementById("content");
 
     ReactDOM.render(React.createElement(reg), redForm);
+
     </script>
+    <script>
+    $(document).ready(function(){
+        {% if messages %}
+            {% for message in messages %}
+              alert('{{ message }}');
+            {% endfor %}
+        {% endif %}
+
+    });
+    </script>
+
     {% endblock %}
-</ul>
