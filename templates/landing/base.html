@@ -17,6 +17,25 @@
     <div>
         <h1></h1>
     </div>
+    <div id="myModalBox" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Заголовок модального окна -->
+          <div class="modal-header">
+            <h4 class="modal-title">Регистрация</h4>
+          </div>
+          <!-- Основное содержимое модального окна -->
+          <div class="modal-body">
+            Содержимое модального окна...
+          </div>
+          <!-- Футер модального окна -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+            <button type="button" class="btn btn-success">Зарегистрироваться</button>
+          </div>
+        </div>
+      </div>
+    </div>
     {% block content %}{% endblock %}
     {% block footer %}
     <hr>

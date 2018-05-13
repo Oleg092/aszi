@@ -1,10 +1,13 @@
 {% extends 'landing/base.html' %}
+
 {% block title %}
     ASZI PROJECT
 {% endblock %}
 {% load static %}
 {% block content %}
-    <button onclick=" " class="btn btn-success btn-lg" id="regButton">Registration</button>
+    <a href="#" id="regButton" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModalBox">Registration</a>
+    {% block modal %}
+    {% endblock %}
  <div id="content"></div>
 
     <script  type = "text/babel">
@@ -39,6 +42,7 @@
                 );
             }
         });
+
     const redForm = document.getElementById("content");
 
     ReactDOM.render(React.createElement(reg), redForm);
