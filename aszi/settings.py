@@ -123,5 +123,5 @@ STATIC_URL = '/static/'
 PROJECT_PATH = os.path.abspath(os.path.dirname(__file__))
 STATICFILES_DIRS = (
     os.path.join(PROJECT_PATH, "static"),
-    '/home/oleg/PycharmProjects/aszi/static'
+    '/home/max/PycharmProjects/aszi/static'
 )
