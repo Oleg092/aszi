@@ -1,29 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d3793807-a360-435e-8720-31d1347badc7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/aszi.iml" afterPath="$PROJECT_DIR$/.idea/aszi.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aszi/__init__.py" afterPath="$PROJECT_DIR$/aszi/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aszi/settings.py" afterPath="$PROJECT_DIR$/aszi/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aszi/urls.py" afterPath="$PROJECT_DIR$/aszi/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aszi/wsgi.py" afterPath="$PROJECT_DIR$/aszi/wsgi.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/landing/admin.py" afterPath="$PROJECT_DIR$/landing/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/landing/forms.py" afterPath="$PROJECT_DIR$/landing/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/landing/models.py" afterPath="$PROJECT_DIR$/landing/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/landing/urls.py" afterPath="$PROJECT_DIR$/landing/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/landing/views.py" afterPath="$PROJECT_DIR$/landing/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/client.js" afterPath="$PROJECT_DIR$/static/client.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/style.css" afterPath="$PROJECT_DIR$/static/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/landing/base.html" afterPath="$PROJECT_DIR$/templates/landing/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/landing/home.html" afterPath="$PROJECT_DIR$/templates/landing/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/landing/landing.html" afterPath="$PROJECT_DIR$/templates/landing/landing.html" />
-    </list>
+    <list default="true" id="d3793807-a360-435e-8720-31d1347badc7" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -116,8 +94,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="42" column="1" lean-forward="true" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
+            <state relative-caret-position="218">
+              <caret line="40" column="10" lean-forward="true" selection-start-line="40" selection-start-column="10" selection-end-line="40" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -820,8 +798,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="42" column="1" lean-forward="true" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
+        <state relative-caret-position="218">
+          <caret line="40" column="10" lean-forward="true" selection-start-line="40" selection-start-column="10" selection-end-line="40" selection-end-column="10" />
           <folding />
         </state>
       </provider>
