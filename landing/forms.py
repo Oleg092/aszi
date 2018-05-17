@@ -5,4 +5,5 @@ from .models import *
 class UsersForm(forms.ModelForm):
     class Meta:
         model = Users
-        exclude = [""]
+        exclude = ["is_active", "is_admin"]
+
