@@ -3,12 +3,13 @@
 <head>
     <title>{% block title %}{% endblock %}</title>
     {% load static %}
-
+    <script type="text/javascript" src="{% static "/client.js" %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static "/style.css" %}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <!-- Bootstrap -->
+    <link rel="stylesheet" href="/home/oleg/PycharmProjects/aszi/static/bootstrap/dist/css/bootstrap.min.css" >
     <!--<link href="" rel="stylesheet">-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script>
@@ -26,14 +27,30 @@
             <h4 class="modal-title">Регистрация</h4>
           </div>
           <!-- Основное содержимое модального окна -->
-          <div class="modal-body">
-            Содержимое модального окна...
-          </div>
+          <form action="" method="POST">{% csrf_token %}
+                <div class="modal-body">
+                <label for="id_email">Электронная почта:</label></br>
+                <input class="form-control" type="email" name="email" id="id_email" required maxlength="255" /></br>
+                <label for="id_firstname">Фамилия:</label></br>
+                <input class="form-control" type="text" name="firstname" id="id_firstname" maxlength="40" /></br>
+                <label for="id_lastname">Имя:</label></br>
+                <input class="form-control" type="text" name="lastname" id="id_lastname" maxlength="40" /></br>
+                <label for="id_middlename">Отчество:</label></br>
+                <input class="form-control" type="text" name="middlename" id="id_middlename" maxlength="40" /></br>
+                <label for="id_birdDate">Дата рождения:</label></br>
+                <input class="form-control" type="text" name="birdDate" id="id_birdDate" />
+                <label for="id_password">Пароль:</label>
+                <input class="form-control" id="pas1" type="text" onKeyUp=checkPass() name="password" required maxlength="30" id="id_password" />
+                <label for="id_password">Повторите пароль:</label>
+                <input class="form-control" id="pas2" type="text" onKeyUp=checkPass() name="password" required maxlength="30" id="id_password" />
+                </div>
           <!-- Футер модального окна -->
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
-            <button type="button" class="btn btn-success">Зарегистрироваться</button>
-          </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+                <button type="submit" id="reg" class="btn btn-success" disabled>Зарегистрироваться</button>
+            </div>
+          </form>
+
         </div>
       </div>
     </div>
@@ -50,9 +67,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins)
-    <script src=""></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed
-    <script src=""></script>-->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins)-->
+    <script src="/home/oleg/PycharmProjects/aszi/static/jquery/jquery-3.3.1.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed-->
+    <script src="/home/oleg/PycharmProjects/aszi/static/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
