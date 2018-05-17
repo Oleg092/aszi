@@ -12,7 +12,7 @@ body{
 }
 #signPanel{
     position: relative;
-    left: 65%;
+    left: 50%;
     height: 460px;
     width: 360px;
 }
