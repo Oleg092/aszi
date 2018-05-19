@@ -1,15 +1,13 @@
 from django.http import HttpResponse
+from django.http import HttpResponseBadRequest
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from django.views import View
-from django.views.generic import TemplateView, DetailView, ListView, FormView
-from django.views.generic.base import RedirectView
-from django.urls import reverse
+from django.template import RequestContext
+from django.views.generic import TemplateView, FormView
 import json
 from django.contrib import messages
 
 from landing.forms import UsersForm
-from landing.models import Users
 
 
 class Autorization(TemplateView, FormView):
@@ -25,12 +23,24 @@ class Autorization(TemplateView, FormView):
             else:
                 messages.success(request, "incorrect password or email")
                 context = HttpResponseRedirect(request.path)
+                context["data"] = 'auth_failed'
+                #self.requestclient(request)
                 return context
         except:
-            self.form_valid(request)
+            print("not autorization")
+        return self.requestclient(request)
 
     def form_valid(self, form):
+        print('vizov')
         # This method is called when valid form data has been POSTed.
         # It should return an HttpResponse.
-        form.save()
-        return super().form_valid(form)
+        self.requestclient(form)
+        ###form.save()
+        #return super().form_valid(form)
+
+    def requestclient(self, request):
+        print("wezdes")
+        messages.success(request, "reg")
+        context = HttpResponseRedirect('/landing')
+        context["data"] = 'auth_failed'
+        return context
