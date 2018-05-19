@@ -1,15 +1,9 @@
-from django.http import HttpResponse
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
-from django.views import View
-from django.views.generic import TemplateView, DetailView, ListView, FormView
-from django.views.generic.base import RedirectView
-from django.urls import reverse
-import json
+from django.shortcuts import get_object_or_404
+from django.views.generic import TemplateView, FormView
 from django.contrib import messages
-
-from landing.forms import UsersForm
 from landing.models import Users
+from landing.forms import UsersForm
 
 
 class Autorization(TemplateView, FormView):
@@ -25,12 +19,26 @@ class Autorization(TemplateView, FormView):
             else:
                 messages.success(request, "incorrect password or email")
                 context = HttpResponseRedirect(request.path)
+                context["data"] = 'auth_failed'
                 return context
         except:
-            self.form_valid(request)
+            print("not autorization")
+            return self.form_valid(request)
 
     def form_valid(self, form):
-        # This method is called when valid form data has been POSTed.
-        # It should return an HttpResponse.
-        form.save()
-        return super().form_valid(form)
+        form1 = UsersForm(form.POST)
+        if form1.is_valid():
+            try:
+                get_object_or_404(Users, email=form.POST["email"])
+            except:
+                form1.save()
+                messages.success(form, "reg_success")
+                context = HttpResponseRedirect('/landing')
+                return context
+
+        return self.requestclient(form)
+
+    def requestclient(self, request):
+        messages.success(request, "reg_failed")
+        context = HttpResponseRedirect('/landing')
+        return context
