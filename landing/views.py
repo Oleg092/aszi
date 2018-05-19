@@ -20,16 +20,12 @@ class Autorization(TemplateView, FormView):
                 messages.success(request, "incorrect password or email")
                 context = HttpResponseRedirect(request.path)
                 context["data"] = 'auth_failed'
-                # self.requestclient(request)
                 return context
         except:
             print("not autorization")
             return self.form_valid(request)
 
     def form_valid(self, form):
-        print('vizov')
-        # This method is called when valid form data has been POSTed.
-        # It should return an HttpResponse.
         form1 = UsersForm(form.POST)
         if form1.is_valid():
             try:
@@ -41,11 +37,8 @@ class Autorization(TemplateView, FormView):
                 return context
 
         return self.requestclient(form)
-        # return super().form_valid(form)
 
     def requestclient(self, request):
-        print("wezdes")
         messages.success(request, "reg_failed")
         context = HttpResponseRedirect('/landing')
-        context["data"] = 'auth_failed'
         return context
