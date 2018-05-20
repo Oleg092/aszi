@@ -30,8 +30,8 @@ class Users(models.Model):
         null=True,
         blank=True
     )
-    password = models.CharField(###кароч для шифрования этого говна напишем спец класс. и перед тем как заливать в базу пароль шифруем его
-        'Пароль',###а при авторизации для проверки дешифруем. И норм
+    password = models.CharField(
+        'Пароль',
         null=False,
         max_length=500
     )

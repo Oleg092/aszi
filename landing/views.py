@@ -38,9 +38,7 @@ class Autorization(TemplateView, FormView):
         if form1.is_valid():
             try:
                 get_object_or_404(Users, email=form.POST["email"])
-                print("zdec")
             except:
-                print("tyt")
                 form1.save()
                 messages.success(form, "reg_success")
                 context = HttpResponseRedirect('/landing')
