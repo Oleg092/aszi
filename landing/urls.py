@@ -1,12 +1,10 @@
-from django.contrib import admin
-from django.conf.urls import url, include
-from django.views.generic import TemplateView
-
-from landing import views
+from django.conf.urls import url
+from landing.home import HomePage
 from landing.views import Autorization
+
 
 
 urlpatterns = [
     url(r'^landing/', Autorization.as_view()),
-
+    url(r'^home/', HomePage.as_view())
 ]
