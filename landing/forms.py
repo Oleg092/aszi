@@ -8,6 +8,7 @@ class UsersForm(forms.ModelForm):
         model = Users
         exclude = ["is_active", "is_admin"]
 
+    # шифрование пароля перед записью в базу
     def clean_password(self):
         data = self.cleaned_data["password"]
         data = bytes(data, encoding='UTF-8')

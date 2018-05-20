@@ -15,6 +15,8 @@ class Autorization(TemplateView, FormView):
         try:
             email = request.POST['email']
             pas = request.POST['pas']
+            pas = bytes(pas, encoding='UTF-8')
+            pas = hashlib.md5(pas).hexdigest()
             try:
                 user = get_object_or_404(Users, email=email)
             except:
@@ -23,6 +25,12 @@ class Autorization(TemplateView, FormView):
             if user.password == pas:
                 messages.success(request, "Добро пожаловать")
                 context = HttpResponseRedirect("/home")
+                context.set_cookie("session", "true")
+                context.set_cookie("user", user.id)
+                context.set_cookie("userName", user.firstname)
+                context.set_cookie("lastName", user.lastname)
+                context.set_cookie("is_admin",  user.is_admin)
+                context.set_cookie("is_active",  user.is_active)
                 return context
             else:
                 messages.success(request, "incorrect password or email")
