@@ -14,8 +14,15 @@ class Autorization(TemplateView, FormView):
         try:
             email = request.POST['email']
             pas = request.POST['pas']
-            if email == "xxxx092@ya.ru" and pas == "123123":
-                return HttpResponseRedirect('/landing')
+            try:
+                user = get_object_or_404(Users, email=email)
+            except:
+                messages.success(request, "user not found")
+                self.requestclient(request)
+            if user.password == pas:
+                messages.success(request, "Добро пожаловать")
+                context = HttpResponseRedirect("/home")
+                return context
             else:
                 messages.success(request, "incorrect password or email")
                 context = HttpResponseRedirect(request.path)
@@ -36,9 +43,9 @@ class Autorization(TemplateView, FormView):
                 context = HttpResponseRedirect('/landing')
                 return context
 
+        messages.success(form, "reg_failed")
         return self.requestclient(form)
 
     def requestclient(self, request):
-        messages.success(request, "reg_failed")
         context = HttpResponseRedirect('/landing')
         return context
