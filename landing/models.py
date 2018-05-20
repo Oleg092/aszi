@@ -33,7 +33,7 @@ class Users(models.Model):
     password = models.CharField(###кароч для шифрования этого говна напишем спец класс. и перед тем как заливать в базу пароль шифруем его
         'Пароль',###а при авторизации для проверки дешифруем. И норм
         null=False,
-        max_length=30
+        max_length=500
     )
     register_date = models.DateField(
         'Дата регистрации',

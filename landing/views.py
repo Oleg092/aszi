@@ -4,6 +4,7 @@ from django.views.generic import TemplateView, FormView
 from django.contrib import messages
 from landing.models import Users
 from landing.forms import UsersForm
+import hashlib
 
 
 class Autorization(TemplateView, FormView):
@@ -37,7 +38,9 @@ class Autorization(TemplateView, FormView):
         if form1.is_valid():
             try:
                 get_object_or_404(Users, email=form.POST["email"])
+                print("zdec")
             except:
+                print("tyt")
                 form1.save()
                 messages.success(form, "reg_success")
                 context = HttpResponseRedirect('/landing')
@@ -49,3 +52,4 @@ class Autorization(TemplateView, FormView):
     def requestclient(self, request):
         context = HttpResponseRedirect('/landing')
         return context
+
