@@ -17,6 +17,6 @@ function logOut() {
     $.cookie('session', null);
     $.cookie('session', null, { path: '127.0.0.1:8000/landing/' });
    var session = $.cookie('session')
-   alert(session)
-    window.location.replace("http://127.0.0.1:8000/home/");
+   //alert(session)
+    window.location.replace("http://127.0.0.1:8000/logout/");
 }

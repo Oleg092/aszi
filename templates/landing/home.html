@@ -4,15 +4,10 @@
 {% endblock %}
 {% load static %}
 {% block content %}
-    <script>
-        $(document).ready(function () {
-            var session = $.cookie("session")
-            if ((session == null) || (session=="null")){
-                window.location.replace("http://127.0.0.1:8000/landing/");
-            }
-        });
-    </script>
     <div>
-        <button id="logOut" onclick="logOut()" class="btn btn-success btn-lg">Log Out</button>
+        <form method="POST" action="/logout/"> {% csrf_token %}
+            <button id="logOut" onclick="logOut()" class="btn btn-success btn-lg">Log Out</button>
+        </form>
+
     </div>
     {% endblock %}

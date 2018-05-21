@@ -23,7 +23,6 @@ class Autorization(TemplateView, FormView):
                 messages.success(request, "user not found")
                 self.requestclient(request)
             if user.password == pas:
-                messages.success(request, "Добро пожаловать")
                 context = HttpResponseRedirect("/home")
                 context.set_cookie("session", "true")
                 context.set_cookie("user", user.id)
