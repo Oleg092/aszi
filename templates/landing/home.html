@@ -4,10 +4,75 @@
 {% endblock %}
 {% load static %}
 {% block content %}
-    <div>
-        <form method="POST" action="/logout/"> {% csrf_token %}
-            <button id="logOut" onclick="logOut()" class="btn btn-success btn-lg">Log Out</button>
-        </form>
+    <div id="content">
+
 
     </div>
+    <div id="home">
+
+    </div>
+    <div id="Aszi options">
+
+    </div>
+    <div>
+
+    </div>
+    </div>
+<script  type = "text/babel">
+    var home = React.createClass ({
+        togglePage: function() {
+            alert('test');
+        },
+        render: function () {
+            return (
+                <div><h1 id="tittle">aszi project</h1>
+                    <div id="dataPanel">
+                        <span id="nm" className="footerLabels">name</span>
+                        <span id="ln" className="footerLabels">lastname</span>
+                        <form method="POST" action="/logout/"> {% csrf_token %}
+                            <button id="logOut" className="btn btn-success btn-lg">Log Out</button>
+                        </form>
+                    </div>
+                    <div id="navigatePanel">
+                        <label id="lSP">Navigate Panel</label>
+                        <nav className="navbar navbar-light bg-faded">
+                            <button className="navbar-toggler" type="button" data-toggle="collapse"
+                                    data-target="#exCollapsingNavbar" aria-controls="exCollapsingNavbar"
+                                    aria-expanded="false" aria-label="Toggle navigation">
+                                &#9776;
+                            </button>
+                            <div className="collapse" id="exCollapsingNavbar">
+                                <div className="bg-inverse p-a-1" id="contentNavPanel">
+                                    <div className="nav navbar-nav" >
+                                        <a onClick={this.togglePage} className="nav-item nav-link active" href="#">Home</a>
+                                        <a  className="nav-item nav-link" href="#">Aszi options</a>
+                                        <a  className="nav-item nav-link" href="#">Pricing</a>
+                                        <a  className="nav-item nav-link" href="#">About us</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+
+            );
+        }
+    });
+
+    const homePage = document.getElementById("content");
+
+    ReactDOM.render(React.createElement(home), homePage);
+
+</script>
+<script>
+    $(document).ready(function() {
+        var name = $.cookie("userName")
+        var lastName = $.cookie("lastName")
+        var admin = $.cookie('is_admin')
+        $('#nm').html(name);
+        $('#ln').html(lastName);
+
+    });
+</script>
     {% endblock %}
