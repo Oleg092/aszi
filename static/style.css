@@ -3,6 +3,7 @@ body{
     max-width: 960px;
     background-color: #937697;
 }
+
 #tittle{
     left: 8%;
     top: 10px;
@@ -11,37 +12,44 @@ body{
     font-size: 200%; /* Размер шрифта */
     width: 300px;
 }
+
 #signPanel{
     position: relative;
     left: 50%;
     height: 460px;
     width: 360px;
 }
+
 #labelLogIn{
     position: relative;
     top: 25%;
 }
+
 #buttonSignIn{
     position: relative;
     top: 10px;
     width: 100%;
 }
+
 #formSign{
     position: relative;
     top: 30%;
 
 }
+
 #forgotPas{
     position: relative;
     top: 10px;
     width: 100%;
 }
+
 #regButton{
     position: absolute;
     top: 25px;
     left: 75%;
     width: 200px;
 }
+
 #dataPanel{
     position: absolute;
     top: 1%;
@@ -62,27 +70,59 @@ body{
     margin-right: 10px;
     text-align: center; /*Центрируем текст по горизонтали*/
 }
+
 #navigatePanel{
     position: relative;
-    left: 0px;
+    left: 20px;
     top: 20px;
     width: 40%;
     height: 700px;
    /* background: rgba(7, 10, 23, 0.69);*/
 
 }
+
 #lSP{
     position: relative;
-    left: 20%;
+    left: 50%;
     top: 5px;
 
     font-size: 30px;
 }
+
 #contentNavPanel{
     position: relative;
-    left: -100px;
+    left: 10px;
 }
+
 #exCollapsingNavbar{
     position: relative;
-    left: -120px;
+    left: 50px;
+}
+
+#titleNav{
+width: 200px;
+height: 100%;
+}
+
+#pageHome{
+position: relative;
+left: 30%;
+top: 50px;
+
+}
+
+#pageAszi{
+position: relative;
+left: 30%;
+top: 50px;
+}
+
+.blet{
+    display: none;
+}
+
+#contentHomePage{
+    position: relative;
+    left: 30%;
+    top: 50px;
 }

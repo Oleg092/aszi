@@ -4,67 +4,35 @@
 {% endblock %}
 {% load static %}
 {% block content %}
-    <div id="content">
-
-
-    </div>
-    <div id="home">
-
-    </div>
-    <div id="Aszi options">
-
-    </div>
-    <div>
-
-    </div>
-    </div>
-<script  type = "text/babel">
-    var home = React.createClass ({
-        togglePage: function() {
-            alert('test');
-        },
-        render: function () {
-            return (
-                <div><h1 id="tittle">aszi project</h1>
-                    <div id="dataPanel">
-                        <span id="nm" className="footerLabels">name</span>
-                        <span id="ln" className="footerLabels">lastname</span>
-                        <form method="POST" action="/logout/"> {% csrf_token %}
-                            <button id="logOut" className="btn btn-success btn-lg">Log Out</button>
-                        </form>
+<div id="titleNav">
+    <h1 id="tittle">aszi project</h1>
+        <div id="dataPanel">
+            <span id="nm" class="footerLabels">name</span>
+            <span id="ln" class="footerLabels">lastname</span>
+            <form method="POST" action="/logout/"> {% csrf_token %}
+                <button id="logOut" onclick="test()" class="btn btn-success btn-lg">Log Out</button>
+            </form>
+        </div>
+            <label id="lSP">Navigate Panel</label>
+             <div id="main" class="container cHidden">
+                <div class="row">
+                    <div id="leftSide" class="col-md-2 col-xs-3">
+                        <ul class="nav nav nav-pills nav-stacked"><!--тут создается новая ссылка в навигационном меню-->
+                            <li><a onclick="togl(id)" href="/home/#" id="pageHomeLink" class="page-link">Home</a></li>
+                            <li><a onclick="togl(id)" href="/home/#" id="pageAsziLink" class="page-link">Aszi</a></li>
+                        </ul>
                     </div>
-                    <div id="navigatePanel">
-                        <label id="lSP">Navigate Panel</label>
-                        <nav className="navbar navbar-light bg-faded">
-                            <button className="navbar-toggler" type="button" data-toggle="collapse"
-                                    data-target="#exCollapsingNavbar" aria-controls="exCollapsingNavbar"
-                                    aria-expanded="false" aria-label="Toggle navigation">
-                                &#9776;
-                            </button>
-                            <div className="collapse" id="exCollapsingNavbar">
-                                <div className="bg-inverse p-a-1" id="contentNavPanel">
-                                    <div className="nav navbar-nav" >
-                                        <a onClick={this.togglePage} className="nav-item nav-link active" href="#">Home</a>
-                                        <a  className="nav-item nav-link" href="#">Aszi options</a>
-                                        <a  className="nav-item nav-link" href="#">Pricing</a>
-                                        <a  className="nav-item nav-link" href="#">About us</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </nav>
-
+                <div id="contentHomePage" class="col-md-10 col-xs-9"><!--в этот див добавляется блок с содержимым странцы-->
+                    <div id="pageHome" class="blet"><!--например как этот-->
+                        <h1>home</h1>
+                    </div>
+                    <div id="pageAszi" class="blet">
+                        <h1>aszi</h1>
                     </div>
                 </div>
-
-            );
-        }
-    });
-
-    const homePage = document.getElementById("content");
-
-    ReactDOM.render(React.createElement(home), homePage);
-
-</script>
+                </div>
+        </div>
+</div>
 <script>
     $(document).ready(function() {
         var name = $.cookie("userName")
@@ -72,7 +40,7 @@
         var admin = $.cookie('is_admin')
         $('#nm').html(name);
         $('#ln').html(lastName);
-
+        $("#pageHome").show();
     });
 </script>
     {% endblock %}

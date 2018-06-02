@@ -1,6 +1,14 @@
+var activePage = "pageProfile";
+
 $("#regButton").click(function() {
     $("#myModalBox").modal('show');
 });
+
+function togl(idLink){
+	idLink = idLink.substr(0, idLink.length - 4);
+	tooglePage(idLink);
+}
+
 function checkPass() {//мне пока видится решение через костыли, как закрыть поле
     var pas1 = $('#pas1').val();//пароля звездочками и при этом обрабатывать его в коде
     var pas2 = $('#pas2').val();//попрбуй найти решение без костылей
@@ -20,6 +28,8 @@ function logOut() {
    //alert(session)
     window.location.replace("http://127.0.0.1:8000/logout/");
 }
-function togglePage() {
-    alert("hui");
+
+function tooglePage(name_page){
+    $(".blet").hide();
+    $("#"+name_page+"").show();
 }
