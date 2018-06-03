@@ -33,3 +33,20 @@ function tooglePage(name_page){
     $(".blet").hide();
     $("#"+name_page+"").show();
 }
+function ajaxTest(){//формируем ajax запрос серверу
+    alert("ajaxtest")
+    $.ajax({
+        url: 'http://127.0.0.1:8000/xhr_test/',
+        type: 'POST', // This is the default though, you don't actually need to always mention it
+        data:{
+                data: 'data',
+                csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
+            },
+        success: function(data) {
+            alert(data);
+        },
+        failure: function(data) {
+            alert('Got an error dude');
+        }
+    });
+}

@@ -1,4 +1,4 @@
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import get_object_or_404
 from django.views.generic import TemplateView, FormView
 from django.contrib import messages
@@ -55,6 +55,6 @@ class Autorization(TemplateView, FormView):
         return self.requestclient(form)
 
     def requestclient(self, request):
-        context = HttpResponseRedirect('/landing')
+        context = HttpResponse('failed')
         return context
 
