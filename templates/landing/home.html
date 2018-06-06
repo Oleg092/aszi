@@ -4,38 +4,50 @@
 {% endblock %}
 {% load static %}
 {% block content %}
+<div id="dataPanel">
+    <form class="labelFio" method="POST" action="/logout/"> {% csrf_token %}
+        <button id="logOut" onclick="test()" class="btn ">Log Out</button>
+    </form>
+    <span id="nm" class="labelFio">name</span>
+    <span id="ln" class="labelFio">lastname</span>
+</div>
 <div id="titleNav">
     <h1 id="tittle">aszi project</h1>
-        <div id="dataPanel">
-            <span id="nm" class="footerLabels">name</span>
-            <span id="ln" class="footerLabels">lastname</span>
-            <form method="POST" action="/logout/"> {% csrf_token %}
-                <button id="logOut" onclick="test()" class="btn btn-success btn-lg">Log Out</button>
-            </form>
-        </div>
-            <label id="lSP">Navigate Panel</label>
-             <div id="main" class="container cHidden">
-                <div class="row">
-                    <div id="leftSide" class="col-md-2 col-xs-3">
-                        <ul class="nav nav nav-pills nav-stacked"><!--тут создается новая ссылка в навигационном меню-->
-                            <li><a onclick="togl(id)" href="/home/#" id="pageHomeLink" class="page-link">Home</a></li>
-                            <li><a onclick="togl(id)" href="/home/#" id="pageAsziLink" class="page-link">Aszi</a></li>
-                        </ul>
-                    </div>
-                <div id="contentHomePage" class="col-md-10 col-xs-9"><!--в этот див добавляется блок с содержимым странцы-->
-                    <div id="pageHome" class="blet"><!--например как этот-->
-                        <h1>home</h1>
-                    </div>
-                    <div id="pageAszi" class="blet">
-                        <h1>aszi</h1>
-                    </div>
-                </div>
-                </div>
-        </div>
+    <div id="main" class="container cHidden">
+        <br class="listLink"><!--тут создается новая ссылка в навигационном меню-->
+        <a style="text-decoration:none" onclick="togl(id), main()"  href="#" id="pageMainLink" class="pageLink">Main</a></br>
+        <a style="text-decoration:none" onclick="togl(id)" href="#" id="pageCatalogueLink" class="pageLink">Catalogue</a></br>
+        <a style="text-decoration:none" onclick="togl(id)" href="#" id="pageBuilderLink" class="pageLink">IS Builder</a></br>
+        <a style="text-decoration:none" onclick="togl(id)" href="#" id="pageManagementLink" class="pageLink">IS Management</a></br>
+        <a style="text-decoration:none" onclick="togl(id)" href="#" id="pageFeedbackLink" class="pageLink">Credits(Feedback)</a></br>
+        </ul>
     </div>
 </div>
-    <button id="testAjax" onclick="ajaxTest()">testAjax</button>
+<div id="contentHomePage" class="col-md-10 col-xs-9"><!--в этот див добавляется блок с содержимым странцы-->
+    <div id="pageMain" class="menu"><!--например как этот-->
+        <h1 class="headContent">Main</h1>
+        content
+    </div>
+    <div id="pageCatalogue" class="menu">
+        <h1 class="headContent">Catalogue</h1>
+        content
+    </div>
+    <div id="pageBuilder" class="menu">
+        <h1 class="headContent">Builder</h1>
+        content
+    </div>
+    <div id="pageManagement" class="menu">
+        <h1 class="headContent">Management</h1>
+        content
+    </div>
+    <div id="pageFeedback" class="menu">
+        <h1 class="headContent">Feedback</h1>
+        content
+    </div>
+</div>
 
+
+</div>
 <script>
     $(document).ready(function() {
         var name = $.cookie("userName")
@@ -43,7 +55,7 @@
         var admin = $.cookie('is_admin')
         $('#nm').html(name);
         $('#ln').html(lastName);
-        $("#pageHome").show();
+        $("#pageMain").show();
     });
 </script>
     {% endblock %}
