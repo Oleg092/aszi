@@ -4,6 +4,7 @@ from django.views.generic import TemplateView, FormView
 from django.contrib import messages
 from landing.models import Users
 from landing.forms import UsersForm
+from landing.UserCookie import UserCookie
 import hashlib
 
 
@@ -23,13 +24,7 @@ class Autorization(TemplateView, FormView):
                 messages.success(request, "user not found")
                 self.requestclient(request)
             if user.password == pas:
-                context = HttpResponseRedirect("/home")
-                context.set_cookie("session", "true")
-                context.set_cookie("user", user.id)
-                context.set_cookie("userName", user.firstname)
-                context.set_cookie("lastName", user.lastname)
-                context.set_cookie("is_admin",  user.is_admin)
-                context.set_cookie("is_active",  user.is_active)
+                context = UserCookie.setCookie(user)
                 return context
             else:
                 messages.success(request, "incorrect password or email")
