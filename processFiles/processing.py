@@ -1,4 +1,10 @@
 from openpyxl import load_workbook
+import sqlite3
+
+conn = sqlite3.connect('db.sqlite3')
+cursor = conn.cursor()
+cursor.execute("select * from landing_users")
+results = cursor.fetchall()
 
 wb = load_workbook('./1.xlsx')
 
@@ -13,3 +19,5 @@ while i < n:
     print(sheet['D' + c + ''].value)
     print(sheet['E' + c + ''].value)
     i = i + 1
+
+print(results)

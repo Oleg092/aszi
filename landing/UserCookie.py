@@ -12,7 +12,7 @@ class UserCookie(object):  # класс для работы с cookie польз
         context.set_cookie("is_admin", user.is_admin)
         context.set_cookie("is_active", user.is_active)
         return context
-    
+
     @staticmethod
     def delCookie():
         context = HttpResponseRedirect("/landing")

@@ -19,7 +19,7 @@
         <a style="text-decoration:none" onclick="togl(id)" href="#" id="pageCatalogueLink" class="pageLink">Catalogue</a></br>
         <a style="text-decoration:none" onclick="togl(id)" href="#" id="pageBuilderLink" class="pageLink">IS Builder</a></br>
         <a style="text-decoration:none" onclick="togl(id)" href="#" id="pageManagementLink" class="pageLink">IS Management</a></br>
-        <a style="text-decoration:none" onclick="togl(id)" href="#" id="pageFeedbackLink" class="pageLink">Credits(Feedback)</a></br>
+        <a style="text-decoration:none; position: relative;  top: 400px;" onclick="togl(id)" href="#" id="pageFeedbackLink" class="pageLink">Credits(Feedback)</a></br>
         </ul>
     </div>
 </div>
@@ -56,6 +56,9 @@
         $('#nm').html(name);
         $('#ln').html(lastName);
         $("#pageMain").show();
+        if (admin == "True"){
+            $('#pageManagementLink').show();
+        }
     });
 </script>
     {% endblock %}
