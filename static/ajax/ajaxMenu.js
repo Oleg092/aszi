@@ -28,7 +28,7 @@ function catalogue(){
         success: function(data) {
             var message = JSON.parse(data);
             var catalog;
-            //$("#pageCatalogue1").empty();
+            $("#pageCatalogue1").empty();
             for(i = 0; i < message.length; i++){
                 console.log(message[i]);
                 catalog = '<div id="szi'+i+'" class="sziInCatalogue">'+message[i]["pk"]+'</br>'+message[i]["fields"]["def_name"]+'</br>'+message[i]["fields"]["def_dev"]+'</div>';
@@ -61,7 +61,7 @@ function management(){
             },
         success: function(data) {
             var message = JSON.parse(data);
-            $("#id_requirements").empty();
+            $("#requirCheck").empty();
             console.log(message.length);
             console.log(message[1]["fields"]["description"])
             for(i=0; i < message.length; i++){
