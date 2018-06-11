@@ -18,7 +18,7 @@
         <a style="text-decoration:none" onclick="togl(id), main()"  href="#" id="pageMainLink" class="pageLink">Main</a></br>
         <a style="text-decoration:none" onclick="togl(id)" href="#" id="pageCatalogueLink" class="pageLink">Catalogue</a></br>
         <a style="text-decoration:none" onclick="togl(id)" href="#" id="pageBuilderLink" class="pageLink">IS Builder</a></br>
-        <a style="text-decoration:none" onclick="togl(id)" href="#" id="pageManagementLink" class="pageLink">IS Management</a></br>
+        <a style="text-decoration:none" onclick="togl(id), management()" href="#" id="pageManagementLink" class="pageLink">IS Management</a></br>
         <a style="text-decoration:none; position: relative;  top: 400px;" onclick="togl(id)" href="#" id="pageFeedbackLink" class="pageLink">Credits(Feedback)</a></br>
         </ul>
     </div>
@@ -38,7 +38,22 @@
     </div>
     <div id="pageManagement" class="menu">
         <h1 class="headContent">Management</h1>
-        content
+        <form id="addAszi">
+            <input type="text" name="def_name" placeholder="defence name" maxlength="100" id="id_def_name" required /><br>
+            <input type="text" name="def_dev" placeholder="defence developer" maxlength="40" id="id_def_dev" required /><br>
+            <input type="text" name="def_cert" placeholder="certification date" id="id_def_cert" required /><br>
+            <input type="text" name="def_desc" placeholder="description" maxlength="500" id="id_def_desc" required /><br>
+            <select id="id_def_os" name="def_os" required>
+                 <option value="1">def os 1</option>
+                 <option value="2">def os 2</option>
+                 <option value="3">def os 2</option>
+            </select><br>
+            <div id="requirCheck" class="custom-control custom-checkbox"></div>
+            <button class="btn">Add Aszi</button>
+        </form>
+        <h1 style="position: absolute; top: 10px; left: 49.7%;">Description requirement</h1>
+        <div id="descReq"></div>
+</select>
     </div>
     <div id="pageFeedback" class="menu">
         <h1 class="headContent">Feedback</h1>

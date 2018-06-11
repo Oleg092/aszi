@@ -49,6 +49,9 @@ class Users(models.Model):
         default=False
     )
 
+    def __str__(self):
+        return self.email
+
 
 class Architecture(models.Model):
     arch_id = models.IntegerField(
@@ -59,6 +62,9 @@ class Architecture(models.Model):
         max_length=200,
     )
 
+    def __str__(self):
+        return self.description
+
 
 class Requirements(models.Model):
     req_id = models.CharField(
@@ -68,7 +74,7 @@ class Requirements(models.Model):
         'Название требования с СрЗИ из приказа ФСТЭК 21',
         max_length=5,
     )
-    desription = models.CharField(
+    description = models.CharField(
         'Описание требования к СрЗИ',
         max_length=500,
         null=False,
@@ -81,6 +87,9 @@ class Requirements(models.Model):
     pdn_lvl = models.CharField(
         max_length=1,
     )
+
+    def __str__(self):
+        return self.description
 
 
 class Arch_reqs(models.Model):
@@ -125,20 +134,12 @@ class Defence(models.Model):
         max_length=1,
         null=False,
     )
-
-
-class Def_reqs(models.Model):
-    id_defreq = models.IntegerField(
-        primary_key=True,
-    )
-    def_id = models.ForeignKey(
-        Defence,
-        on_delete=models.CASCADE,
-    )
-    id = models.ForeignKey(
+    requirements = models.ManyToManyField(
         Requirements,
-        on_delete=models.CASCADE,
     )
+
+    def __str__(self):
+        return self.def_name
 
 
 class Def_type(models.Model):
@@ -151,6 +152,9 @@ class Def_type(models.Model):
         max_length=50,
         null=False,
     )
+
+    def __str__(self):
+        return self.description
 
 
 class Def_price(models.Model):

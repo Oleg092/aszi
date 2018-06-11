@@ -15,3 +15,9 @@ class UsersForm(forms.ModelForm):
         data = hashlib.md5(data).hexdigest()
         print(data)
         return data
+
+
+class DefenceForm(forms.ModelForm):
+    class Meta:
+        model = Defence
+        exclude = ["def_id"]

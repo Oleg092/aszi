@@ -33,3 +33,7 @@ function tooglePage(name_page){
     $(".menu").hide();
     $("#"+name_page+"").show();
 }
+
+function descShow(desc){
+    $('#descReq').html(desc);
+}

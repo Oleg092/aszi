@@ -174,3 +174,26 @@ top: 50px;
 #pageManagementLink{
     display: none;
 }
+
+#addAszi{
+    position: relative;
+    left: 20%;
+    top: 10%;
+}
+#requirCheck{
+width:200px; /* ширина нашего блока */
+height:300px; /* высота нашего блока */
+background: #fff; /* цвет фона, белый */
+border: 1px solid #C1C1C1; /* размер и цвет границы блока */
+overflow: auto; /* свойство для прокрутки по горизонтали. Автоматом, если больше блока */
+}
+
+#descReq{
+    position:relative;
+    left: 50%;
+    top: -452px;
+    background: white;
+    width: 400px;
+    height: 500px;
+    overflow: auto;
+}
