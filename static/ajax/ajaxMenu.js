@@ -19,7 +19,28 @@ function main(){
 }
 
 function catalogue(){
-//Catalogue
+    $.ajax({
+        url: 'http://127.0.0.1:8000/getSziList/',
+        type: 'POST',
+        data:{
+                csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
+            },
+        success: function(data) {
+            var message = JSON.parse(data);
+            var catalog;
+            //$("#pageCatalogue1").empty();
+            for(i = 0; i < message.length; i++){
+                console.log(message[i]);
+                catalog = '<div id="szi'+i+'" class="sziInCatalogue">'+message[i]["pk"]+'</br>'+message[i]["fields"]["def_name"]+'</br>'+message[i]["fields"]["def_dev"]+'</div>';
+                $('#pageCatalogue1').append(catalog);
+            }
+            //console.log(message[1]);
+
+        },
+        failure: function(data) {
+
+        }
+    });
 }
 
 function isBuilder(){
@@ -48,7 +69,7 @@ function management(){
                 console.log(mess)
                 label = '<label id="'+mess+'" onmouseover="descShow(id)" class="form-check-label" for="inlineFormCheck'+i+'">'+message[i]["fields"]["require"]+'</label>';
                 //$("#id_requirements").append( $('<option style="height: 30px; width: 100px;" value="'+message[i]["pk"]+'">'+message[i]["fields"]["require"]+'</option>'));
-               $("#requirCheck").append($('<input id="inlineFormCheck'+i+'" type="checkbox" class="form-check-input" value="'+message[i]["pk"]+'">'+label+'<Br>'));
+               $("#requirCheck").append('<input id="inlineFormCheck'+i+'" type="checkbox" class="form-check-input" value="'+message[i]["pk"]+'">'+label+'<Br>');
 
             }
         },

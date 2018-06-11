@@ -1,18 +1,17 @@
-from openpyxl import load_workbook #либу я поставил
+from openpyxl import load_workbook
 import sqlite3
 
 conn = sqlite3.connect('../db.sqlite3')
 cursor = conn.cursor()
 results = cursor.fetchall()
 
-wb = load_workbook('./22.xlsx') #файлик сюда закинь тоже сам, чтобы все в проекте было и назови по другому
+wb = load_workbook('./22.xlsx')
 
 sheet_name = u'sheet'
 sheet = wb.get_sheet_by_name(sheet_name)
 
-
-n = 10
-j = 2 # тебе сначала надо заполнить таблицу с СЗИ потом заполнять связующую...
+n = 11
+j = 2
 while j < n:
     b = str(j)
     print(sheet['A' + b + ''].value)
