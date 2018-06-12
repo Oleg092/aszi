@@ -61,7 +61,7 @@ A {
 #dataPanel{
     position: absolute;
     top: 0px;
-    left: 200px;
+    left: 180px;
     width: 85%;
     background: #333333;
     height: 110px;
@@ -140,7 +140,9 @@ top: 50px;
 
 #contentHomePage{
     position: absolute;
-    left: 185px;
+    padding: 0px;
+    margin: 0px;
+    left: 200px;
     top: 110px;
     width: 100%;
     height: 80%
@@ -160,12 +162,12 @@ top: 50px;
     margin: 3px;
     padding: 5px;
 }
-
+/*Подзаголовок вкладки*/
 .headContent{
     color: white;
     position: absolute;
     left: 0px;
-    top: -45px;
+    top: -50px;
 }
 #main{
     position: relative;
@@ -187,14 +189,15 @@ background: #fff; /* цвет фона, белый */
 border: 1px solid #C1C1C1; /* размер и цвет границы блока */
 overflow: auto; /* свойство для прокрутки по горизонтали. Автоматом, если больше блока */
 }
-
+/*Описание требования на которое наведен курсор*/
 #descReq{
     position:relative;
     left: 50%;
-    top: -452px;
+    top: -232px;
     background: white;
     width: 437px;
-    height: 500px;
+    height: 270px;
+    background-color: rgb(225, 225, 225);
     overflow: auto;
 }
 #pageCatalogue1{
@@ -203,47 +206,50 @@ overflow: auto; /* свойство для прокрутки по горизо�
     height: 100%;
     overflow: auto;
 }
-
+/*Поле СрЗИ в каталоге*/
 .sziInCatalogue{
     position: relative;
-    left: 8%;
+    left: 10px;
     float: left;
-    top: 5%;
+    top: 3%;
     background: white;
-    padding: 10px;
-    width: 80%;
-    height: 150px;
-    margin: 10px;
+    padding: 5px;
+    width: 97%;
+    height: 160px;
+    margin: 5px;
     overflow: auto;
 
 }
+/*Описание СрЗИ*/
 .descSzi{
     position: relative;
     float: left;
     left: 0px;
     top: 0px;
     width: 32%;
-    height: 100%;
+    height: 143px;
     margin: 5px;
     padding: 5px;
 }
+/*Информация о СрЗИ*/
 .sziInfo{
     position: relative;
     float: left;
     left: 0px;
     top: 0px;
     width: 32%;
-    height: 100%;
+    height: 143px;
     margin: 5px;
     padding: 5px;
 }
+/*Список требований закрываемых СрЗИ*/
 .sziReqCatalogue{
     position: relative;
     float: left;
     left: 0px;
     top: 0px;
     width: 32%;
-    height: 100%;
+    height: 143px;
     margin: 5px;
     padding: 5px;
     overflow: auto;
