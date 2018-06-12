@@ -19,6 +19,7 @@
         <a style="text-decoration:none" onclick="togl(id), catalogue()" href="#" id="pageCatalogueLink" class="pageLink">Catalogue</a></br>
         <a style="text-decoration:none" onclick="togl(id)" href="#" id="pageBuilderLink" class="pageLink">IS Builder</a></br>
         <a style="text-decoration:none" onclick="togl(id), management()" href="#" id="pageManagementLink" class="pageLink">IS Management</a></br>
+        <a style="text-decoration:none" onclick="togl(id)" href="#" id="pageUsersLink" class="pageLink">Users</a></br>
         <a style="text-decoration:none; position: relative;  top: 400px;" onclick="togl(id)" href="#" id="pageFeedbackLink" class="pageLink">Credits(Feedback)</a></br>
         </ul>
     </div>
@@ -59,9 +60,15 @@
         <h1 class="headContent">Feedback</h1>
         content
     </div>
+    <div id="pageUsers" class="menu">
+        <h1 class="headContent">Users</h1>
+        content
+    </div>
 </div>
-
-
+<div id="footer">
+    <h5 style="color: white; position: relative; left: 14%; width: 50%;">Thanks for using aszi project. With love Dream Team</h5>
+</div>
+<div id="rightLine">
 </div>
 <script>
     $(document).ready(function() {
@@ -73,6 +80,7 @@
         $("#pageMain").show();
         if (admin == "True"){
             $('#pageManagementLink').show();
+            $('#pageUsersLink').show();
         }
     });
 </script>
