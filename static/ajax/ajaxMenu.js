@@ -58,7 +58,7 @@ function management(){
             console.log(message.length);
             console.log(message[1]["fields"]["description"])
             for(i=0; i < message.length; i++){
-                mess = ''+message[i]["fields"]["description"]+'';
+                mess = '<H3>'+message[i]["fields"]["require"]+'</H3>'+message[i]["fields"]["description"]+'';
                 console.log(mess)
                 label = '<label id="'+mess+'" onmouseover="descShow(id)" class="form-check-label" for="inlineFormCheck'+i+'">'+message[i]["fields"]["require"]+'</label>';
                 //$("#id_requirements").append( $('<option style="height: 30px; width: 100px;" value="'+message[i]["pk"]+'">'+message[i]["fields"]["require"]+'</option>'));
