@@ -79,8 +79,8 @@ A {
 #dataPanel{
     position: absolute;
     top: 0px;
-    left: 180px;
-    width: 85%;
+    left: 0px;
+    width: 100%;
     background: #333333;
     height: 110px;
 }
@@ -175,8 +175,9 @@ top: 50px;
     left: 11px;
 }
 .labelFio{
+    position: relative;
+    right: 3%;
     float: right;
-    right: 20%;
     color: white;
     margin: 3px;
     padding: 5px;
