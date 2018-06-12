@@ -201,6 +201,8 @@ top: 50px;
     position: relative;
     left: 20%;
     top: 10%;
+    width: 40%;
+    height: 40%;
 }
 #requirCheck{
 width:200px; /* ширина нашего блока */
@@ -213,7 +215,7 @@ overflow: auto; /* свойство для прокрутки по горизо�
 #descReq{
     position:relative;
     left: 50%;
-    top: -232px;
+    top: 0px;
     background: white;
     width: 437px;
     height: 270px;
