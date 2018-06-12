@@ -14,13 +14,15 @@ n = 11
 j = 2
 while j < n:
     b = str(j)
+    d = str(sheet['D' + b + ''].value)
+    d = d[0:10]
     print(sheet['A' + b + ''].value)
     print(sheet['B' + b + ''].value)
     print(sheet['C' + b + ''].value)
-    print(sheet['D' + b + ''].value)
+    print(d)
     print(sheet['E' + b + ''].value)
     print(sheet['F' + b + ''].value)
-    result = cursor.execute('INSERT INTO landing_defence VALUES (?, ?, ?, ?, ?, ?)', (int(sheet['A' + b + ''].value), str(sheet['B' + b + ''].value), str(sheet['C' + b + ''].value), sheet['D' + b + ''].value, str(sheet['E' + b + ''].value), str(sheet['F' + b + ''].value)))
+    result = cursor.execute('INSERT INTO landing_defence VALUES (?, ?, ?, ?, ?, ?)', (int(sheet['A' + b + ''].value), str(sheet['B' + b + ''].value), str(sheet['C' + b + ''].value), d, str(sheet['E' + b + ''].value), str(sheet['F' + b + ''].value)))
     conn.commit()
     j = j + 1
 

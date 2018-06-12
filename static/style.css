@@ -207,11 +207,44 @@ overflow: auto; /* свойство для прокрутки по горизо�
 .sziInCatalogue{
     position: relative;
     left: 8%;
+    float: left;
     top: 5%;
     background: white;
-    padding: 20px;
+    padding: 10px;
     width: 80%;
     height: 150px;
-    margin: 20px;
+    margin: 10px;
+    overflow: auto;
 
+}
+.descSzi{
+    position: relative;
+    float: left;
+    left: 0px;
+    top: 0px;
+    width: 32%;
+    height: 100%;
+    margin: 5px;
+    padding: 5px;
+}
+.sziInfo{
+    position: relative;
+    float: left;
+    left: 0px;
+    top: 0px;
+    width: 32%;
+    height: 100%;
+    margin: 5px;
+    padding: 5px;
+}
+.sziReqCatalogue{
+    position: relative;
+    float: left;
+    left: 0px;
+    top: 0px;
+    width: 32%;
+    height: 100%;
+    margin: 5px;
+    padding: 5px;
+    overflow: auto;
 }
