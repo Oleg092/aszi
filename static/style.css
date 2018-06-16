@@ -154,6 +154,7 @@ top: 50px;
     position: relative;
     width: 100%;
     height: 100%;
+    overflow: auto;
 }
 
 #contentHomePage{
@@ -275,4 +276,15 @@ overflow: auto; /* свойство для прокрутки по горизо�
     margin: 5px;
     padding: 5px;
     overflow: auto;
+}
+
+#numPage{
+    position: relative;
+    left: 37%;
+    top: 55%;
+    width: 500px;
+}
+.dataBuild{
+    display: none;
+    width: 100%;
 }

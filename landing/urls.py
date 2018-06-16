@@ -8,7 +8,7 @@ urlpatterns = [
     url(r'^landing/', Autorization.as_view()),
     url(r'^home/', HomePage.as_view()),
     url(r'^logout/', LogOut.as_view()),
-    url(r'^xhr_test/', getUserData.xhr_test),
+    url(r'^getUserList/', getUserData.getUsersList),
     url(r'^get_req_list/', getReqList.getReqList),
     url(r'^getSziList/', getSziList.getSziList),
 ]

@@ -15,11 +15,11 @@
     <h1 id="tittle">aszi project</h1>
     <div id="main" class="container cHidden">
         <br class="listLink"><!--тут создается новая ссылка в навигационном меню-->
-        <a style="text-decoration:none" onclick="togl(id), main()"  href="#" id="pageMainLink" class="pageLink">Main</a></br>
-        <a style="text-decoration:none" onclick="togl(id), catalogue()" href="#" id="pageCatalogueLink" class="pageLink">Catalogue</a></br>
+        <a style="text-decoration:none" onclick="togl(id)"  href="#" id="pageMainLink" class="pageLink">Main</a></br>
+        <a style="text-decoration:none" onclick="togl(id), getReqList(id)" href="#" id="pageCatalogueLink" class="pageLink">Catalogue</a></br>
         <a style="text-decoration:none" onclick="togl(id)" href="#" id="pageBuilderLink" class="pageLink">IS Builder</a></br>
-        <a style="text-decoration:none" onclick="togl(id), management()" href="#" id="pageManagementLink" class="pageLink">IS Management</a></br>
-        <a style="text-decoration:none" onclick="togl(id)" href="#" id="pageUsersLink" class="pageLink">Users</a></br>
+        <a style="text-decoration:none" onclick="togl(id), getReqList(id)" href="#" id="pageManagementLink" class="pageLink">IS Management</a></br>
+        <a style="text-decoration:none" onclick="togl(id), getUserList()" href="#" id="pageUsersLink" class="pageLink">Users</a></br>
         <a style="text-decoration:none; position: relative;  top: 400px;" onclick="togl(id)" href="#" id="pageFeedbackLink" class="pageLink">Credits(Feedback)</a></br>
         </ul>
     </div>
@@ -35,7 +35,25 @@
     </div>
     <div id="pageBuilder" class="menu">
         <h1 class="headContent">Builder</h1>
-        content
+        <h3 style="position: relative; left: 15%; width: 800px;">Братиш, го соберем те СЗИ шоб нормально ваще было уася</h3>
+            <div id="buildLevel1" class="dataBuild" style="display: ">
+                <h1 style="display: none" id="flag1" class="flag">active</h1>
+                <h1>СТР1</h1>
+            </div>
+            <div id="buildLevel2" class="dataBuild">
+                <h1 style="display: none" id="flag2" class="flag">no active</h1>
+                <h1>СТР2</h1>
+            </div>
+            <div id="buildLevel3" class="dataBuild">
+                <h1 style="display: none" id="flag3" class="flag">no active</h1>
+                <h1>СТР3</h1>
+            </div>
+            <div id="numPage">
+                <button class="btn" onclick="tglBuilMenuPg(1)">Стр1</button>
+                <button class="btn" onclick="tglBuilMenuPg(2)">Стр2</button>
+                <button class="btn" onclick="tglBuilMenuPg(3)">Стр3</button>
+                <button class="btn btn-success" onclick="tglBuilMenuPg('next')">Далее</button>
+            </div>
     </div>
     <div id="pageManagement" class="menu">
         <h1 class="headContent">Management</h1>
@@ -78,6 +96,7 @@
         $('#nm').html(name);
         $('#ln').html(lastName);
         $("#pageMain").show();
+        $("#buildLevel1").show();
         if (admin == "True"){
             $('#pageManagementLink').show();
             $('#pageUsersLink').show();

@@ -20,24 +20,6 @@ function getReqList(fName){ //запрос списка требований и 
     });
 }
 
-function main(){
-    var userId = $.cookie('user')
-    $.ajax({
-        url: 'http://127.0.0.1:8000/xhr_test/',
-        type: 'POST',
-        data:{
-                userId: userId,
-                csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
-            },
-        success: function(data) {
-            var message = JSON.parse(data);
-        },
-        failure: function(data) {
-            alert('User Data Not Found');
-        }
-    });
-}
-
 function catalogue(reqList){
     $.ajax({
         url: 'http://127.0.0.1:8000/getSziList/',
@@ -54,10 +36,6 @@ function catalogue(reqList){
 
         }
     });
-}
-
-function isBuilder(){
-//isBuilder
 }
 
 function feedback(){
@@ -96,4 +74,26 @@ function catalogReq(sziList, reqList){
         $("#szi"+i+"").append(reqListInCat);
         req = '';
     }
+}
+
+function getUserList(){
+    $.ajax({
+        url: 'http://127.0.0.1:8000/getUserList/',
+        type: 'POST',
+        data:{
+                csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
+            },
+        success: function(data) {
+            var userList = JSON.parse(data);
+            showUsers(userList);
+
+        },
+        failure: function(data) {
+
+        }
+    });
+}
+
+function showUsers(userList){
+    console.log(userList);
 }
