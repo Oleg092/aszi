@@ -17,7 +17,7 @@
         <br class="listLink"><!--тут создается новая ссылка в навигационном меню-->
         <a style="text-decoration:none" onclick="togl(id)"  href="#" id="pageMainLink" class="pageLink">Main</a></br>
         <a style="text-decoration:none" onclick="togl(id), getReqList(id)" href="#" id="pageCatalogueLink" class="pageLink">Catalogue</a></br>
-        <a style="text-decoration:none" onclick="togl(id), getReqList(id)" href="#" id="pageBuilderLink" class="pageLink">IS Builder</a></br>
+        <a style="text-decoration:none" onclick="togl(id)" href="#" id="pageBuilderLink" class="pageLink">IS Builder</a></br>
         <a style="text-decoration:none" onclick="togl(id), getReqList(id)" href="#" id="pageManagementLink" class="pageLink">IS Management</a></br>
         <a style="text-decoration:none" onclick="togl(id), getUserList()" href="#" id="pageUsersLink" class="pageLink">Users</a></br>
         <a style="text-decoration:none; position: relative;  top: 400px;" onclick="togl(id)" href="#" id="pageFeedbackLink" class="pageLink">Credits(Feedback)</a></br>
@@ -38,15 +38,43 @@
         <h3 style="position: relative; left: 15%; width: 800px;">Братиш, го соберем те СЗИ шоб нормально ваще было уася</h3>
             <div id="buildLevel1" class="dataBuild" style="display: ">
                 <h1 style="display: none" id="flag1" class="flag">active</h1>
-                <h1>СТР1</h1>
+                <label for="defLevel">Уровень защищенности:</label><br>
+                <select id="defLevel" name="defLevel" required>
+                 <option value="1">1</option>
+                 <option value="2">2</option>
+                 <option value="3">3</option>
+                 <option value="3">4</option>
+                </select><br>
+                <label>Количество рабочих станций на АРМ:</label><br>
+                <input type="number" placeholder="кол-во станций" name="amountArm" id="amountArm"><br>
+                <label>Количество серверов:</label><br>
+                <input type="number" placeholder="кол-во серверов" name="amountServ" id="amountServ"><br>
+                <label>Операционные системы на серверах:</label><br>
+                <div class="listOsCheck">
+                    <input type="checkbox" class="form-check-input" value="linux"><label>linux</label><br>
+                    <input type="checkbox" class="form-check-input" value="windows"><label>windows</label><br>
+                </div>
             </div>
             <div id="buildLevel2" class="dataBuild">
                 <h1 style="display: none" id="flag2" class="flag">no active</h1>
-                <h1>СТР2</h1>
+                <label>Учесть структурные особенности</label><input id="structure" onclick="checkBoxShow(id)" type="checkbox" class=""><br>
+                <div class="listOsCheck">
+                    <input type="checkbox" class="form-check-input, structure" value="notUsingWireless" disabled><label>Не используются беспроводные технологии</label><br>
+                    <input type="checkbox" class="form-check-input, structure" value="notUsingMobile" disabled><label>Не используются мобильные средства</label><br>
+                    <input type="checkbox" class="form-check-input, structure" value="notUsingVirtual" disabled><label>Не используются средства виртуализации</label><br>
+                </div>
+                <label>Учесть ценовую политику</label><input id="coast" type="checkbox" onclick="checkBoxShow(id)" class=""><br>
+                <div class="listOsCheck">
+                    <input type="checkbox" class="form-check-input, coast" value="licenseOnHost" disabled><label>Лицензия на хост</label><br>
+                    <input type="checkbox" class="form-check-input, coast" value="technicalSupport" disabled><label>Техническая поддержка</label><br>
+                    <input type="checkbox" class="form-check-input, coast" value="teachingSlave" disabled><label>Обучение сотрудников</label><br>
+                    <input type="checkbox" class="form-check-input, coast" value="acquisitionCost" disabled><label>Единовременная стоимость приобретения</label><br>
+                </div>
             </div>
             <div id="buildLevel3" class="dataBuild">
                 <h1 style="display: none" id="flag3" class="flag">no active</h1>
-                <h1>СТР3</h1>
+                <label>В системе уже имеются СЗИ</label><input id="checkSziOnPr" type="checkbox"  onclick="getReqList(id), checkBoxShow(id)" class=""><br>
+                <div id="sziOnPr" class="custom-control custom-checkbox"></div>
             </div>
             <div id="numPage">
                 <button class="btn" onclick="tglBuilMenuPg(1)">Стр1</button>

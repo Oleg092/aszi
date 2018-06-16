@@ -7,7 +7,7 @@ function getReqList(fName){ //запрос списка требований и 
             },
         success: function(data) {
             var reqList = JSON.parse(data);
-            if ((fName == "pageCatalogueLink")||(fName == 'pageBuilderLink')){
+            if ((fName == "pageCatalogueLink")||(fName == 'checkSziOnPr')){
                 catalogue(reqList, fName);
             }
             if (fName == "pageManagementLink"){
@@ -29,7 +29,7 @@ function catalogue(reqList, fName){
             },
         success: function(data) {
             var sziList = JSON.parse(data);
-            if (fName != 'pageBuilderLink'){
+            if (fName != 'checkSziOnPr'){
                 catalogReq(sziList, reqList);
             }
             else {
@@ -46,7 +46,7 @@ function catalogue(reqList, fName){
 function feedback(){
 //feedback
 }
-function management(reqList){
+function management(reqList){ // вывод спискасписок реквариментов для страницы management
     $("#requirCheck").empty();
     console.log(reqList.length);
     console.log(reqList[1]["fields"]["description"])
@@ -104,6 +104,10 @@ function showUsers(userList){
 }
 
 function buildData (sziList, reqList){
-    console.log(sziList);
-    console.log(reqList);
+    $("#sziOnPr").empty();
+    for(i=0; i < reqList.length; i++){
+        label = '<H3>'+sziList[i]["fields"]["def_name"]+'</H3>';
+        $("#sziOnPr").append('<input id="inlineFormCheck'+i+'" type="checkbox" class="form-check-input" value="'+sziList[i]["pk"]+'">'+label+'<Br>');
+
+    }
 }

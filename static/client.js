@@ -37,3 +37,23 @@ function tooglePage(name_page){
 function descShow(desc){
     $('#descReq').html(desc);
 }
+
+function checkBoxShow(type){// доступность чекбоксов на 2ой странице алгоритма подбора
+    if (type != 'checkSziOnPr'){
+        if ($('#'+type+'').prop("checked") == true){
+            $('.'+type+'').removeAttr('disabled'); //чекбоксы доступны
+        }
+        else{
+            $('.'+type+'').attr('disabled', 'disabled'); //не доступны
+            $('.'+type+'').prop("checked", false); // если чекбоксы были включены то отключаем
+        }
+    }
+    else{
+        if ($('#checkSziOnPr').prop("checked") == true){//если в системе есть сзи, показываем пользователю форму с сзи
+            $('#sziOnPr').show();
+        }
+        else{//иначе скрываем ее
+            $('#sziOnPr').hide();
+        }
+    }
+}
