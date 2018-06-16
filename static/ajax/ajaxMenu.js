@@ -7,8 +7,8 @@ function getReqList(fName){ //запрос списка требований и 
             },
         success: function(data) {
             var reqList = JSON.parse(data);
-            if (fName == "pageCatalogueLink"){
-                catalogue(reqList);
+            if ((fName == "pageCatalogueLink")||(fName == 'pageBuilderLink')){
+                catalogue(reqList, fName);
             }
             if (fName == "pageManagementLink"){
                 management(reqList);
@@ -20,7 +20,7 @@ function getReqList(fName){ //запрос списка требований и 
     });
 }
 
-function catalogue(reqList){
+function catalogue(reqList, fName){
     $.ajax({
         url: 'http://127.0.0.1:8000/getSziList/',
         type: 'POST',
@@ -29,7 +29,12 @@ function catalogue(reqList){
             },
         success: function(data) {
             var sziList = JSON.parse(data);
-            catalogReq(sziList, reqList);
+            if (fName != 'pageBuilderLink'){
+                catalogReq(sziList, reqList);
+            }
+            else {
+                buildData(sziList, reqList);
+            }
 
         },
         failure: function(data) {
@@ -96,4 +101,9 @@ function getUserList(){
 
 function showUsers(userList){
     console.log(userList);
+}
+
+function buildData (sziList, reqList){
+    console.log(sziList);
+    console.log(reqList);
 }
