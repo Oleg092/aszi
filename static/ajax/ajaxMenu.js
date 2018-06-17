@@ -100,7 +100,19 @@ function getUserList(){
 }
 
 function showUsers(userList){
-    console.log(userList);
+    var user;
+    var email;
+    var firstName;
+    var lastName;
+    var btn;
+    for(i=0; i < userList.length; i++){
+        email = '<div class = "userList"><label>'+userList[i]["fields"]["email"]+'</label></div>';
+        firstName = '<div class = "userList"><label>'+userList[i]["fields"]["firstname"]+'</label></div>';
+        lastName = '<div class = "userList"><label>'+userList[i]["fields"]["lastname"]+'</label></div>';
+        btn = '<div class="userList" id="'+userList[i]["pk"]+'"><button class="btn">Edit</button></div>';
+        user = '<div class="userListR">' + email + firstName + lastName + btn + '</div>';
+        $('#pageUsers').append(user);
+    }
 }
 
 function buildData (sziList, reqList){
