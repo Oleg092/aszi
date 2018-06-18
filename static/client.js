@@ -24,7 +24,7 @@ function logOut() {
     $.removeCookie('session', { path: '127.0.0.1:8000/home/' });
     $.cookie('session', null);
     $.cookie('session', null, { path: '127.0.0.1:8000/landing/' });
-   var session = $.cookie('session')
+   var session = $.cookie('session');
    //alert(session)
     window.location.replace("http://127.0.0.1:8000/logout/");
 }
@@ -34,7 +34,7 @@ function tooglePage(name_page){
     $("#"+name_page+"").show();
 }
 
-function descShow(desc){
+function descShow(desc){       //отображение описания requirements при наведении на стр management
     $('#descReq').html(desc);
 }
 
