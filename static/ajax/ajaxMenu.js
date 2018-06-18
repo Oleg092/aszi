@@ -99,7 +99,7 @@ function getUserList(){
     });
 }
 
-function showUsers(userList){
+function showUsers(userList){ // вывод списка юзеров
     var user;
     var email;
     var firstName;
@@ -111,13 +111,13 @@ function showUsers(userList){
         lastName = '<div class = "userList"><label>'+userList[i]["fields"]["lastname"]+'</label></div>';
         btn = '<div class="userList" id="'+userList[i]["pk"]+'"><button class="btn">Edit</button></div>';
         user = '<div class="userListR">' + email + firstName + lastName + btn + '</div>';
-        $('#pageUsers').append(user);
+        $('#userListR').append(user);
     }
 }
 
 function buildData (sziList, reqList){
     $("#sziOnPr").empty();
-    for(i=0; i < reqList.length; i++){
+    for(i=0; i < sziList.length; i++){
         label = '<H3>'+sziList[i]["fields"]["def_name"]+'</H3>';
         $("#sziOnPr").append('<input id="inlineFormCheck'+i+'" type="checkbox" class="form-check-input" value="'+sziList[i]["pk"]+'">'+label+'<Br>');
 

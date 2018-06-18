@@ -35,7 +35,7 @@
     </div>
     <div id="pageBuilder" class="menu">
         <h1 class="headContent">Builder</h1>
-        <h3 style="position: relative; left: 15%; width: 800px;">Братиш, го соберем те СЗИ шоб нормально ваще было уася</h3>
+        <h3 style="position: relative; left: 34.5%; width: 500px;">Подбор СЗИ</h3>
             <div id="buildLevel1" class="dataBuild" style="display: ">
                 <h1 style="display: none" id="flag1" class="flag">active</h1>
                 <label for="defLevel">Уровень защищенности:</label><br>
@@ -51,24 +51,24 @@
                 <input type="number" placeholder="кол-во серверов" name="amountServ" id="amountServ"><br>
                 <label>Операционные системы на серверах:</label><br>
                 <div class="listOsCheck">
-                    <input type="checkbox" class="form-check-input" value="linux"><label>linux</label><br>
-                    <input type="checkbox" class="form-check-input" value="windows"><label>windows</label><br>
+                    <input type="checkbox" class="form-check-input listOsCheck1" value="linux"><label>linux</label><br>
+                    <input type="checkbox" class="form-check-input listOsCheck2" value="windows"><label>windows</label><br>
                 </div>
             </div>
             <div id="buildLevel2" class="dataBuild">
                 <h1 style="display: none" id="flag2" class="flag">no active</h1>
                 <label>Учесть структурные особенности</label><input id="structure" onclick="checkBoxShow(id)" type="checkbox" class=""><br>
                 <div class="listOsCheck">
-                    <input type="checkbox" class="form-check-input, structure" value="notUsingWireless" disabled><label>Не используются беспроводные технологии</label><br>
-                    <input type="checkbox" class="form-check-input, structure" value="notUsingMobile" disabled><label>Не используются мобильные средства</label><br>
-                    <input type="checkbox" class="form-check-input, structure" value="notUsingVirtual" disabled><label>Не используются средства виртуализации</label><br>
+                    <input type="checkbox" id="notUsingWireless" class="form-check-input, structure" name="notUsingWireless" disabled><label>Не используются беспроводные технологии</label><br>
+                    <input type="checkbox" class="form-check-input, structure" id="notUsingMobile" disabled><label>Не используются мобильные средства</label><br>
+                    <input type="checkbox" class="form-check-input, structure" id="notUsingVirtual" disabled><label>Не используются средства виртуализации</label><br>
                 </div>
                 <label>Учесть ценовую политику</label><input id="coast" type="checkbox" onclick="checkBoxShow(id)" class=""><br>
                 <div class="listOsCheck">
-                    <input type="checkbox" class="form-check-input, coast" value="licenseOnHost" disabled><label>Лицензия на хост</label><br>
-                    <input type="checkbox" class="form-check-input, coast" value="technicalSupport" disabled><label>Техническая поддержка</label><br>
-                    <input type="checkbox" class="form-check-input, coast" value="teachingSlave" disabled><label>Обучение сотрудников</label><br>
-                    <input type="checkbox" class="form-check-input, coast" value="acquisitionCost" disabled><label>Единовременная стоимость приобретения</label><br>
+                    <input type="checkbox" class="form-check-input, coast" id="licenseOnHost" disabled><label>Лицензия на хост</label><br>
+                    <input type="checkbox" class="form-check-input, coast" id="technicalSupport" disabled><label>Техническая поддержка</label><br>
+                    <input type="checkbox" class="form-check-input, coast" id="teachingSlave" disabled><label>Обучение сотрудников</label><br>
+                    <input type="checkbox" class="form-check-input, coast" id="acquisitionCost" disabled><label>Единовременная стоимость приобретения</label><br>
                 </div>
             </div>
             <div id="buildLevel3" class="dataBuild">
@@ -80,7 +80,8 @@
                 <button class="btn" onclick="tglBuilMenuPg(1)">Стр1</button>
                 <button class="btn" onclick="tglBuilMenuPg(2)">Стр2</button>
                 <button class="btn" onclick="tglBuilMenuPg(3)">Стр3</button>
-                <button class="btn btn-success" onclick="tglBuilMenuPg('next')">Далее</button>
+                <button id="nextPage" class="btn btn-success" onclick="tglBuilMenuPg('next')">Далее</button>
+                <button id="sendData" style="display: none;" class="btn btn-success" onclick="buildSziList()">Подобрать</button>
             </div>
     </div>
     <div id="pageManagement" class="menu">
@@ -108,11 +109,13 @@
     </div>
     <div id="pageUsers" class="menu">
         <h1 class="headContent">Users</h1>
-        <div class="userListR">
-            <div class="userList"><h5>Email</h5></div>
-            <div class="userList"><h5>First Name</h5></div>
-            <div class="userList"><h5>Last Name</h5></div>
-            <div class="userList"><h5>Edit</h5></div>
+        <div id="userListR">
+            <div class="userListR">
+                <div class="userList"><h5>Email</h5></div>
+                <div class="userList"><h5>First Name</h5></div>
+                <div class="userList"><h5>Last Name</h5></div>
+                <div class="userList"><h5>Edit</h5></div>
+            </div>
         </div>
     </div>
 </div>
