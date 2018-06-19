@@ -17,7 +17,7 @@
         <br class="listLink"><!--тут создается новая ссылка в навигационном меню-->
         <a style="text-decoration:none" onclick="togl(id)"  href="#" id="pageMainLink" class="pageLink">Main</a></br>
         <a style="text-decoration:none" onclick="togl(id), getReqList(id)" href="#" id="pageCatalogueLink" class="pageLink">Catalogue</a></br>
-        <a style="text-decoration:none" onclick="togl(id)" href="#" id="pageBuilderLink" class="pageLink">IS Builder</a></br>
+        <a style="text-decoration:none" onclick="togl(id), getReqList(id)" href="#" id="pageBuilderLink" class="pageLink">IS Builder</a></br>
         <a style="text-decoration:none" onclick="togl(id), getReqList(id)" href="#" id="pageManagementLink" class="pageLink">IS Management</a></br>
         <a style="text-decoration:none" onclick="togl(id), getUserList()" href="#" id="pageUsersLink" class="pageLink">Users</a></br>
         <a style="text-decoration:none; position: relative;  top: 400px;" onclick="togl(id)" href="#" id="pageFeedbackLink" class="pageLink">Credits(Feedback)</a></br>
@@ -37,22 +37,33 @@
         <h1 class="headContent">Builder</h1>
         <h3 style="position: relative; left: 34.5%; width: 500px;">Подбор СЗИ</h3>
             <div id="buildLevel1" class="dataBuild" style="display: ">
-                <h1 style="display: none" id="flag1" class="flag">active</h1>
-                <label for="defLevel">Уровень защищенности:</label><br>
-                <select id="defLevel" name="defLevel" required>
-                 <option value="1">1</option>
-                 <option value="2">2</option>
-                 <option value="3">3</option>
-                 <option value="3">4</option>
-                </select><br>
-                <label>Количество рабочих станций на АРМ:</label><br>
-                <input type="number" placeholder="кол-во станций" name="amountArm" id="amountArm"><br>
-                <label>Количество серверов:</label><br>
-                <input type="number" placeholder="кол-во серверов" name="amountServ" id="amountServ"><br>
-                <label>Операционные системы на серверах:</label><br>
-                <div class="listOsCheck">
-                    <input type="checkbox" class="form-check-input listOsCheck1" value="linux"><label>linux</label><br>
-                    <input type="checkbox" class="form-check-input listOsCheck2" value="windows"><label>windows</label><br>
+                <div class="blockBuild">
+                    <h1 style="display: none" id="flag1" class="flag">active</h1>
+                    <label for="defLevel">Уровень защищенности:</label><br>
+                    <select id="defLevel" name="defLevel" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="3">4</option>
+                    </select><br>
+                </div>
+                <div class="blockBuild">
+                    <label>Количество рабочих станций на АРМ:</label><br>
+                    <input type="number" placeholder="кол-во станций" name="amountArm" id="amountArm"><br>
+                    <label>Операционные системы на серверах:</label><br>
+                    <div class="listOsCheck">
+                        <input type="checkbox" class="form-check-input listOsCheck1" value="linux"><label>linux</label><br>
+                        <input type="checkbox" class="form-check-input listOsCheck2" value="windows"><label>windows</label><br>
+                    </div>
+                </div>
+                <div class="blockBuild">
+                    <label>Количество серверов:</label><br>
+                    <input type="number" placeholder="кол-во серверов" name="amountServ" id="amountServ"><br>
+                    <label>Операционные системы на серверах:</label><br>
+                    <div class="listOsCheck">
+                        <input type="checkbox" class="form-check-input listOsCheck1" value="linux"><label>linux</label><br>
+                        <input type="checkbox" class="form-check-input listOsCheck2" value="windows"><label>windows</label><br>
+                    </div>
                 </div>
             </div>
             <div id="buildLevel2" class="dataBuild">
@@ -73,7 +84,7 @@
             </div>
             <div id="buildLevel3" class="dataBuild">
                 <h1 style="display: none" id="flag3" class="flag">no active</h1>
-                <label>В системе уже имеются СЗИ</label><input id="checkSziOnPr" type="checkbox"  onclick="getReqList(id), checkBoxShow(id)" class=""><br>
+                <label>В системе уже имеются СЗИ</label><input id="checkSziOnPr" type="checkbox"  onclick="checkBoxShow(id)" class=""><br>
                 <div id="sziOnPr" class="custom-control custom-checkbox"></div>
             </div>
             <div id="numPage">
@@ -141,4 +152,4 @@
         console.log(square(3))
     });
 </script>
-    {% endblock %}
+{% endblock %}
