@@ -64,9 +64,11 @@ function catalogReq(sziList, reqList){
     var labelDesc;
     var idReq;
     for(i = 0; i < sziList.length; i++){//вывод сзи на страницу catalogue
-        labelDesc = '<div class = "descSzi"><h5>Szi Description</h5>'+sziList[i]["fields"]["def_desc"]+'</div>'
-        catalog = '<div id="szi'+i+'" class="sziInCatalogue"><div class="sziInfo"><h5>Szi Info</h5>'+sziList[i]["fields"]["def_name"]+'</br>'+sziList[i]["fields"]["def_dev"]+'</br><label>Сертефицирован до: <label>'+sziList[i]["fields"]["def_cert"]+'</div>'+labelDesc+'</div>';
-        $('#pageCatalogue1').append(catalog);
+        if (sziList[i]["fields"]["def_os"] == 0) {
+            labelDesc = '<div class = "descSzi"><h5>Szi Description</h5>'+sziList[i]["fields"]["def_desc"]+'</div>'
+            catalog = '<div id="szi'+i+'" class="sziInCatalogue"><div class="sziInfo"><h5>Szi Info</h5>'+sziList[i]["fields"]["def_name"]+'</br>'+sziList[i]["fields"]["def_dev"]+'</br><label>Сертефицирован до: <label>'+sziList[i]["fields"]["def_cert"]+'</div>'+labelDesc+'</div>';
+            $('#pageCatalogue1').append(catalog);
+        }
     }
     var req = '';
     $("#requirCheck").empty();
