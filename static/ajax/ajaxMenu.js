@@ -77,7 +77,7 @@ function catalogReq(sziList, reqList){
             idReq = sziList[i]["fields"]["requirements"][j];
             req += '<h6>'+reqList[idReq]["fields"]["require"]+'</h6>'+reqList[idReq]["fields"]["description"]+'<br><br>';
         }
-        reqListInCat = '<div class="sziReqCatalogue"><h5>Requirements List</h5>'+req+'</div>';
+        reqListInCat = '<div class="sziReqCatalogue"><h5 style = "position: sticky; top: 0px; background: white;">Requirements List</h5>'+req+'</div>';
         $("#szi"+i+"").append(reqListInCat);
         req = '';
     }
