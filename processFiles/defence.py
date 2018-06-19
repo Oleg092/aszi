@@ -10,7 +10,7 @@ wb = load_workbook('./22.xlsx')
 sheet_name = u'sheet'
 sheet = wb.get_sheet_by_name(sheet_name)
 
-n = 11
+n = 52
 j = 2
 while j < n:
     b = str(j)
