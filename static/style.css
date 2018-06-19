@@ -291,7 +291,7 @@ overflow: auto; /* свойство для прокрутки по горизо�
 }
 #sziOnPr{
     position: relative;
-    left: -30%;
+    left: -10%;
     width:700px; /* ширина нашего блока */
     height:400px; /* высота нашего блока */
     background: #fff; /* цвет фона, белый */
@@ -327,12 +327,13 @@ overflow: auto; /* свойство для прокрутки по горизо�
     position: relative;
     margin: 10px;
     padding: 10px;
-    left: 10%;
+    left: 25%;
     height: 70%;
-    width: 1200px;
+    width: 1000px;
 }
 .blockBuild{
     position: relative;
     float: left;
-    width: 25%;
+    left: -10%;
+    width: 35%;
 }
