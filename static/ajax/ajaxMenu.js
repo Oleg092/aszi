@@ -7,7 +7,7 @@ function getReqList(fName){ //запрос списка требований и 
             },
         success: function(data) {
             var reqList = JSON.parse(data);
-            if ((fName == "pageCatalogueLink")||(fName == 'checkSziOnPr')){
+            if ((fName == "pageCatalogueLink")||(fName == 'pageBuilderLink')){
                 catalogue(reqList, fName);
             }
             if (fName == "pageManagementLink"){
@@ -29,7 +29,7 @@ function catalogue(reqList, fName){
             },
         success: function(data) {
             var sziList = JSON.parse(data);
-            if (fName != 'checkSziOnPr'){
+            if (fName != 'pageBuilderLink'){
                 catalogReq(sziList, reqList);
             }
             else {
@@ -117,11 +117,26 @@ function showUsers(userList){ // вывод списка юзеров
     }
 }
 
-function buildData (sziList, reqList){
+function buildData(sziList, reqList){
+    let osOnCl;
+    let osOnSer;
+    alert('poehali!!!');
     $("#sziOnPr").empty();
-    for(i=0; i < sziList.length; i++){
-        label = '<H3>'+sziList[i]["fields"]["def_name"]+'</H3>';
-        $("#sziOnPr").append('<input id="inlineFormCheck'+i+'" type="checkbox" class="form-check-input" value="'+sziList[i]["pk"]+'">'+label+'<Br>');
+    for(i = 0; i < sziList.length; i++){//вывод сзи на страницу build
+        if (sziList[i]["fields"]["def_os"] == 1) {
+            console.log(i);
+            osOnCl = '<input type="checkbox" style = "position: relative; left 5px; class="form-check-input listOsCheck1" value=""><label>'+sziList[i]["fields"]["def_name"]+'</label><br>';
+            $('#osOnClient').append(osOnCl);
+        }
+        if (sziList[i]["fields"]["def_os"] == 2) {
+            console.log(i);
+            osOnSer = '<input type="checkbox" style = "position: relative; left 5px; class="form-check-input listOsCheck1" value=""><label>'+sziList[i]["fields"]["def_name"]+'</label><br>';
+            $('#osOnServer').append(osOnSer);
+        }
 
+        if (sziList[i]["fields"]["def_os"] == 0) {
+            label = '<H3>'+sziList[i]["fields"]["def_name"]+'</H3>';
+            $("#sziOnPr").append('<input id="inlineFormCheck'+i+'" type="checkbox" class="form-check-input" value="'+sziList[i]["pk"]+'">'+label+'<Br>');
+        }
     }
 }

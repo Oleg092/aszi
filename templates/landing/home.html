@@ -46,21 +46,17 @@
                     <option value="3">4</option>
                     </select><br>
                 <div class="blockBuild">
-                    <label>Количество рабочих станций на АРМ:</label><br>
+                    <label>Количество клиентских рабочих станций:</label><br>
                     <input type="number" placeholder="кол-во станций" name="amountArm" id="amountArm"><br>
-                    <label>Операционные системы на серверах:</label><br>
-                    <div class="listOsCheck">
-                        <input type="checkbox" class="form-check-input listOsCheck1" value="linux"><label>linux</label><br>
-                        <input type="checkbox" class="form-check-input listOsCheck2" value="windows"><label>windows</label><br>
+                    <label>Операционные системы на клиенте:</label><br>
+                    <div class="listOsCheck" id="osOnClient">
                     </div>
                 </div>
                 <div class="blockBuild">
                     <label>Количество серверов:</label><br>
                     <input type="number" placeholder="кол-во серверов" name="amountServ" id="amountServ"><br>
                     <label>Операционные системы на серверах:</label><br>
-                    <div class="listOsCheck">
-                        <input type="checkbox" class="form-check-input listOsCheck1" value="linux"><label>linux</label><br>
-                        <input type="checkbox" class="form-check-input listOsCheck2" value="windows"><label>windows</label><br>
+                    <div class="listOsCheck" id="osOnServer" style="position: relative; overflow: auto; height: 200px; width: 420px;">
                     </div>
                 </div>
             </div>
