@@ -120,8 +120,9 @@ function showUsers(userList){ // вывод списка юзеров
 function buildData(sziList, reqList){
     let osOnCl;
     let osOnSer;
-    alert('poehali!!!');
     $("#sziOnPr").empty();
+    $('#osOnClient').empty();
+    $('#osOnServer').empty();
     for(i = 0; i < sziList.length; i++){//вывод сзи на страницу build
         if (sziList[i]["fields"]["def_os"] == 1) {
             console.log(i);
