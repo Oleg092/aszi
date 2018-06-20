@@ -17,6 +17,7 @@
         <br class="listLink"><!--тут создается новая ссылка в навигационном меню-->
         <a style="text-decoration:none" onclick="togl(id)"  href="#" id="pageMainLink" class="pageLink">Main</a></br>
         <a style="text-decoration:none" onclick="togl(id), getReqList(id)" href="#" id="pageCatalogueLink" class="pageLink">Catalogue</a></br>
+        <a style="text-decoration:none" onclick="togl(id)" href="#" id="pageMeasuresLink" class="pageLink">IS Measures</a></br>
         <a style="text-decoration:none" onclick="togl(id), getReqList(id)" href="#" id="pageBuilderLink" class="pageLink">IS Builder</a></br>
         <a style="text-decoration:none" onclick="togl(id), getReqList(id)" href="#" id="pageManagementLink" class="pageLink">IS Management</a></br>
         <a style="text-decoration:none" onclick="togl(id), getUserList()" href="#" id="pageUsersLink" class="pageLink">Users</a></br>
@@ -68,12 +69,12 @@
                     <input type="checkbox" class="form-check-input, structure" id="notUsingMobile" disabled><label>Не используются мобильные средства</label><br>
                     <input type="checkbox" class="form-check-input, structure" id="notUsingVirtual" disabled><label>Не используются средства виртуализации</label><br>
                 </div>
-                <label>Учесть ценовую политику</label><input id="coast" type="checkbox" onclick="checkBoxShow(id)" class=""><br>
+                <label>Выбор алгоритма подбора</label><input id="coast" type="checkbox" onclick="checkBoxShow(id)" class=""><br>
                 <div class="listOsCheck">
-                    <input type="checkbox" class="form-check-input, coast" id="licenseOnHost" disabled><label>Лицензия на хост</label><br>
-                    <input type="checkbox" class="form-check-input, coast" id="technicalSupport" disabled><label>Техническая поддержка</label><br>
-                    <input type="checkbox" class="form-check-input, coast" id="teachingSlave" disabled><label>Обучение сотрудников</label><br>
-                    <input type="checkbox" class="form-check-input, coast" id="acquisitionCost" disabled><label>Единовременная стоимость приобретения</label><br>
+                    <select id="typeAlg" name="typeAlg" required>
+                        <option value="1">С наименьшей избыточностью</option>
+                        <option value="2">С наименьшими затратами</option>
+                    </select>
                 </div>
             </div>
             <div id="buildLevel3" class="dataBuild">
@@ -82,11 +83,11 @@
                 <div id="sziOnPr" class="custom-control custom-checkbox"></div>
             </div>
             <div id="numPage">
-                <button class="btn" onclick="tglBuilMenuPg(1)">Стр1</button>
-                <button class="btn" onclick="tglBuilMenuPg(2)">Стр2</button>
-                <button class="btn" onclick="tglBuilMenuPg(3)">Стр3</button>
+                <button class="btn" onclick="tglBuilMenuPg(1)">Структура ИСПДн</button>
+                <button class="btn" onclick="tglBuilMenuPg(2)">Архитектура ИСПДн</button>
+                <button class="btn" onclick="tglBuilMenuPg(3)">Применяемые СрЗИ</button>
                 <button id="nextPage" class="btn btn-success" onclick="tglBuilMenuPg('next')">Далее</button>
-                <button id="sendData" style="display: none;" class="btn btn-success" onclick="buildSziList()">Подобрать</button>
+                <button id="sendData" style="display: none;" class="btn btn-success" onclick="buildSziList()">Подобрать СрЗИ</button>
             </div>
     </div>
     <div id="pageManagement" class="menu">
@@ -100,7 +101,12 @@
                  <option value="1">SrZI</option>
                  <option value="2">Client OS</option>
                  <option value="3">Server OS</option>
-            </select><br>
+            </select>
+            <select id="id_typePO" name="typePO" required>
+                 <option value="1">1. Управляющее ПО</option>
+                 <option value="2">2. Лицензия на клиента</option>
+                 <option value="3">3. Лицензия на сервер</option>
+            </select><input type="number" min="0.00" max="1000000.00" step="0.01" /><br>
             <div id="requirCheck" class="custom-control custom-checkbox"></div>
             <button class="btn">Add Aszi</button>
         </form>
@@ -122,6 +128,10 @@
                 <div class="userList"><h5>Edit</h5></div>
             </div>
         </div>
+    </div>
+    <div id="pageMeasures" class="menu">
+        <h1 class="headContent">Measures</h1>
+            content
     </div>
 </div>
 <div id="footer">

@@ -134,7 +134,6 @@ function buildData(sziList, reqList){
             osOnSer = '<input type="checkbox" style = "position: relative; left 5px; class="form-check-input listOsCheck1" value=""><label>'+sziList[i]["fields"]["def_name"]+'</label><br>';
             $('#osOnServer').append(osOnSer);
         }
-
         if (sziList[i]["fields"]["def_os"] == 0) {
             label = '<H3>'+sziList[i]["fields"]["def_name"]+'</H3>';
             $("#sziOnPr").append('<input id="inlineFormCheck'+i+'" type="checkbox" class="form-check-input" value="'+sziList[i]["pk"]+'">'+label+'<Br>');
