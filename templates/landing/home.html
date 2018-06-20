@@ -17,7 +17,7 @@
         <br class="listLink"><!--тут создается новая ссылка в навигационном меню-->
         <a style="text-decoration:none" onclick="togl(id)"  href="#" id="pageMainLink" class="pageLink">Main</a></br>
         <a style="text-decoration:none" onclick="togl(id), getReqList(id)" href="#" id="pageCatalogueLink" class="pageLink">Catalogue</a></br>
-        <a style="text-decoration:none" onclick="togl(id)" href="#" id="pageMeasuresLink" class="pageLink">IS Measures</a></br>
+        <a style="text-decoration:none" onclick="togl(id), getReqList(id)" href="#" id="pageMeasuresLink" class="pageLink">IS Measures</a></br>
         <a style="text-decoration:none" onclick="togl(id), getReqList(id)" href="#" id="pageBuilderLink" class="pageLink">IS Builder</a></br>
         <a style="text-decoration:none" onclick="togl(id), getReqList(id)" href="#" id="pageManagementLink" class="pageLink">IS Management</a></br>
         <a style="text-decoration:none" onclick="togl(id), getUserList()" href="#" id="pageUsersLink" class="pageLink">Users</a></br>
@@ -69,7 +69,7 @@
                     <input type="checkbox" class="form-check-input, structure" id="notUsingMobile" disabled><label>Не используются мобильные средства</label><br>
                     <input type="checkbox" class="form-check-input, structure" id="notUsingVirtual" disabled><label>Не используются средства виртуализации</label><br>
                 </div>
-                <label>Выбор алгоритма подбора</label><input id="coast" type="checkbox" onclick="checkBoxShow(id)" class=""><br>
+                <label>Выбор алгоритма подбора</label>
                 <div class="listOsCheck">
                     <select id="typeAlg" name="typeAlg" required>
                         <option value="1">С наименьшей избыточностью</option>
@@ -131,7 +131,13 @@
     </div>
     <div id="pageMeasures" class="menu">
         <h1 class="headContent">Measures</h1>
-            content
+        <div id="reqListR">
+            <div class="reqListR">
+                <div class="reqList"><h5>require</h5></div>
+                <div class="reqList"><h5>description</h5></div>
+                <div class="reqList"><h5>pdn_lvl</h5></div>
+            </div>
+        </div>
     </div>
 </div>
 <div id="footer">

@@ -13,6 +13,9 @@ function getReqList(fName){ //запрос списка требований и 
             if (fName == "pageManagementLink"){
                 management(reqList);
             }
+            if (fName == "pageMeasuresLink"){
+                measures(reqList);
+            }
         },
         failure: function(data) {
 
@@ -138,5 +141,19 @@ function buildData(sziList, reqList){
             label = '<H3>'+sziList[i]["fields"]["def_name"]+'</H3>';
             $("#sziOnPr").append('<input id="inlineFormCheck'+i+'" type="checkbox" class="form-check-input" value="'+sziList[i]["pk"]+'">'+label+'<Br>');
         }
+    }
+}
+
+function measures(reqList){//вывод список реков на страницу measures
+    var req;
+    var require;
+    var description;
+    var pdn_lvl;
+    for(i=0; i < reqList.length; i++){
+        require = '<div class = "reqList"><label>'+reqList[i]["fields"]["require"]+'</label></div>';
+        description = '<div class = "reqList"><label>'+reqList[i]["fields"]["description"]+'</label></div>';
+        pdn_lvl = '<div class = "reqList"><label>'+reqList[i]["fields"]["pdn_lvl"]+'</label></div>';
+        req = '<div class="reqListR">' + require + description + pdn_lvl + '</div>';
+        $('#reqListR').append(req);
     }
 }

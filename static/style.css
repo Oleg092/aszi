@@ -337,3 +337,25 @@ overflow: auto; /* свойство для прокрутки по горизо�
     left: -10%;
     width: 35%;
 }
+.reqListR{
+    position: relative;
+    left: 5%;
+    height: 55px;
+    width: 90%;
+    overflow: auto;
+    background: white;
+    margin: 5px;
+}
+.reqList{
+    position: relative;
+    top: 15px;
+    height: 30px;
+    width: 25%;
+    float: left;
+}
+#reqListR{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
