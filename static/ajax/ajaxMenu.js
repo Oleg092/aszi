@@ -105,6 +105,7 @@ function getUserList(){
 }
 
 function showUsers(userList){ // вывод списка юзеров
+    $('#userListR').empty();
     var user;
     var email;
     var firstName;
@@ -145,6 +146,7 @@ function buildData(sziList, reqList){
 }
 
 function measures(reqList){//вывод список реков на страницу measures
+    $('#reqListR').empty();
     var req;
     var require;
     var description;
