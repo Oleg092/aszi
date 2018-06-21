@@ -199,9 +199,9 @@ top: 50px;
 
 #addAszi{
     position: relative;
-    left: 20%;
-    top: 10%;
-    width: 40%;
+    left: 10%;
+    top: 15%;
+    width: 80%;
     height: 40%;
 }
 #requirCheck{
@@ -215,10 +215,10 @@ overflow: auto; /* свойство для прокрутки по горизо�
 #descReq{
     position:relative;
     left: 50%;
-    top: 0px;
+    top: -100px;
     background: white;
-    width: 437px;
-    height: 270px;
+    width: 400px;
+    height: 300px;
     background-color: rgb(225, 225, 225);
     overflow: auto;
 }
@@ -340,7 +340,7 @@ overflow: auto; /* свойство для прокрутки по горизо�
 .reqListR{
     position: relative;
     left: 5%;
-    height: 55px;
+    height: 85px;
     width: 90%;
     overflow: auto;
     background: white;
@@ -349,8 +349,8 @@ overflow: auto; /* свойство для прокрутки по горизо�
 .reqList{
     position: relative;
     top: 15px;
-    height: 30px;
-    width: 25%;
+    height: 40px;
+    width: 10%;
     float: left;
 }
 #reqListR{

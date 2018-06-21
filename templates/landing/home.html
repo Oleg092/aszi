@@ -93,22 +93,31 @@
     <div id="pageManagement" class="menu">
         <h1 class="headContent">Management</h1>
         <form id="addAszi">
-            <input type="text" name="def_name" placeholder="defence name" maxlength="100" id="id_def_name" required /><br>
-            <input type="text" name="def_dev" placeholder="defence developer" maxlength="40" id="id_def_dev" required /><br>
-            <input type="text" name="def_cert" placeholder="certification date" id="id_def_cert" required /><br>
-            <input type="text" name="def_desc" placeholder="description" maxlength="500" id="id_def_desc" required /><br>
-            <select id="id_def_os" name="def_os" required>
-                 <option value="1">SrZI</option>
-                 <option value="2">Client OS</option>
-                 <option value="3">Server OS</option>
-            </select>
-            <select id="id_typePO" name="typePO" required>
-                 <option value="1">1. Управляющее ПО</option>
-                 <option value="2">2. Лицензия на клиента</option>
-                 <option value="3">3. Лицензия на сервер</option>
-            </select><input type="number" min="0.00" max="1000000.00" step="0.01" /><br>
-            <div id="requirCheck" class="custom-control custom-checkbox"></div>
-            <button class="btn">Add Aszi</button>
+            <div style="float: left; position: relative; width: 200px; left: 1px;">
+                <label>Стоимость поддержки</label><br>
+                </select><input type="number" min="0.00" placeholder="Стоимость поддержки" max="1000000.00" step="0.01" /><br>
+                <label>Название СрЗИ</label><br>
+                <input type="text" name="def_name" placeholder="Название СрЗИ" maxlength="100" id="id_def_name" required /><br>
+                <label>Разработчик СрЗИ</label><br>
+                <input type="text" name="def_dev" placeholder="Разработчик СрЗИ" maxlength="40" id="id_def_dev" required /><br>
+                <label>Дата сертификации СрЗИ</label><br>
+                <input type="text" name="def_cert" placeholder="Дата сертификации СрЗИ" id="id_def_cert" required /><br>
+                <label>Описание СрЗИ</label><br>
+                <input type="text" name="def_desc" placeholder="Описание СрЗИ" maxlength="500" id="id_def_desc" required /><br>
+                <label>Тип СрЗИ</label><br>
+                <select id="id_def_os" name="def_os" required>
+                    <option value="1">SrZI</option>
+                    <option value="2">Client OS</option>
+                    <option value="3">Server OS</option>
+                </select>
+                <select id="id_typePO" name="typePO" required>
+                    <option value="1">1. Управляющее ПО</option>
+                    <option value="2">2. Лицензия на клиента</option>
+                    <option value="3">3. Лицензия на сервер</option>
+                </select><label>Стоимость</label><input type="number" placeholder="Стоимость" min="0.00" max="1000000.00" step="0.01" /><br>
+            </div>
+            <div id="requirCheck" class="custom-control custom-checkbox" style="position: relative; left: 180px; height: 500px;"></div>
+            <button style="position: relative; float: right;  left: -50px; top: -50px; width: 300px;" class="btn">Добавить СрЗИ</button>
         </form>
         <h1 style="position: absolute; top: 10px; left: 49.7%;"></h1>
         <div id="descReq"></div>
@@ -131,11 +140,11 @@
     </div>
     <div id="pageMeasures" class="menu">
         <h1 class="headContent">Measures</h1>
+                <div style="position: relative; left: 63px;" class="reqList"><h5>require</h5></div>
+                <div style="position: relative; left: 50px;" class="reqList"><h5>description</h5></div>
+                <div style="position: relative; left: 770px;" class="reqList"><h5>pdn_lvl</h5></div>
         <div id="reqListR">
             <div class="reqListR">
-                <div class="reqList"><h5>require</h5></div>
-                <div class="reqList"><h5>description</h5></div>
-                <div class="reqList"><h5>pdn_lvl</h5></div>
             </div>
         </div>
     </div>
