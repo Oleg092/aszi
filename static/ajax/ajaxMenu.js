@@ -153,7 +153,7 @@ function measures(reqList){//вывод список реков на стран�
     var pdn_lvl;
     for(i=0; i < reqList.length; i++){
         require = '<div class = "reqList"><label>'+reqList[i]["fields"]["require"]+'</label></div>';
-        description = '<div style="position: relative; width: 80%;" class = "reqList"><label>'+reqList[i]["fields"]["description"]+'</label></div>';
+        description = '<div style="position: relative; width: 75%;" class = "reqList"><label>'+reqList[i]["fields"]["description"]+'</label></div>';
         pdn_lvl = '<div class = "reqList"><label>'+reqList[i]["fields"]["pdn_lvl"]+'</label></div>';
         req = '<div class="reqListR">' + require + description + pdn_lvl + '</div>';
         $('#reqListR').append(req);
