@@ -34,6 +34,6 @@ class BuildSziList():
         requirements = Requirements.objects.values('id').filter(pdn_lvl__in=range, defensible__gt=0)
         for r in requirements:
             reqList.append(r["id"])
-        print(reqList)
+        #print(reqList)
         return reqList
 

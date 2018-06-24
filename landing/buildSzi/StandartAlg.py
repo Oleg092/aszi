@@ -43,8 +43,8 @@ class CreateStandartSziList(BuildSziList):
                 flag = False
             firstResult.clear()
 
-        print(req)
-        print(result)
+        #print(req)
+        #print(result)
         print(datetime.datetime.now())  # проверка времени, за которое отрабатывает алгоритм... для 50 срзи в базе
         # поиск на моем слабеньком компе происходит за 0.12 сек на 1 уровне ПДН и за 0.24 сек на 4 уровне ПДН
-        return self
+        return result

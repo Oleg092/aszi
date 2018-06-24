@@ -2,10 +2,12 @@ from django.http import HttpResponse
 from django.views.generic import TemplateView
 import json
 import datetime
+from django.core import serializers
 
 from landing.buildSzi.BuildSziList import BuildSziList
 from landing.buildSzi.CorrectionReqList import CorrectionReqList
 from landing.buildSzi.StandartAlg import CreateStandartSziList
+from landing.models import Defence
 
 
 class BuildSziPage(TemplateView):  # """говнокласс с говнокодом для вызова остальных говноклассов"""
@@ -28,6 +30,9 @@ class BuildSziPage(TemplateView):  # """говнокласс с говнокод
                 print('none szi in system')
             reqList2lvl = CorrectionReqList(bool(notUsingVirtual), bool(notUsingWireless), bool(notUsingMobile), reqList)
             reqList2lvl.adaptationLevel2()
-            sziList = CreateStandartSziList(reqList2lvl.reqList)
-            sziList.buildListSzi()
-        return HttpResponse('suka')
+            szi = CreateStandartSziList(reqList2lvl.reqList)
+            sziList = szi.buildListSzi()
+            sziList = Defence.objects.filter(def_id__in=sziList)
+            sziList = serializers.serialize("json", sziList)
+            return HttpResponse(json.dumps(sziList), content_type='application/json'
+                                )

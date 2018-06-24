@@ -85,10 +85,27 @@ function buildSziList(){ //отправка запроса на сервер
 
             },
         success: function(data) {
-
+            var sziList = JSON.parse(data);
+            console.log(sziList)
+            showSziOnPage(sziList)
         },
         failure: function(data) {
             console.log('Bad request');
         }
     });
+}
+
+function showSziOnPage(sziList){
+    $("#buildSzi").empty();
+    $("#myModalBox").modal('show');
+    var catalog;
+    var labelDesc;
+    var idReq;
+    for(i = 0; i < sziList.length; i++){//вывод сзи на страницу resultBuild
+        if (sziList[i]["fields"]["def_os"] == 0) {
+            labelDesc = '<div class = "descSzi"><h5>Szi Description</h5>'+sziList[i]["fields"]["def_desc"]+'</div>'
+            catalog = '<div id="szi'+i+'" class="sziInCatalogue"><div class="sziInfo"><h5>Szi Info</h5>'+sziList[i]["fields"]["def_name"]+'</br>'+sziList[i]["fields"]["def_dev"]+'</br><label>Сертефицирован до: <label>'+sziList[i]["fields"]["def_cert"]+'</div>'+labelDesc+'</div>';
+            $('#buildSzi').append(catalog);
+        }
+    }
 }
