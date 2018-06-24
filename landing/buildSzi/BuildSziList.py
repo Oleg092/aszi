@@ -7,12 +7,8 @@ class BuildSziList():
     __metaclass__ = ABCMeta
 
     @abstractmethod
-    def buildListSzi(self):
+    def buildListSzi(self, reqList):
         """Подобрать СрЗИ"""
-
-    @abstractmethod
-    def exeptReq(self):
-        """Список требований закрываемый существующими СрЗИ в системе"""
 
     @staticmethod
     @abstractmethod
@@ -28,6 +24,7 @@ class BuildSziList():
         """достаем список мер исходя из выбранного пользуном предполагаемого уровня защищенности"""
         """Тупой костыль, но гуглить времени нет"""
         range = [0, 1]
+        reqList = list()
         if pdnLvl == 2:
             range = [0, 1, 2]
         if pdnLvl == 3:
@@ -35,6 +32,8 @@ class BuildSziList():
         if pdnLvl == 4:
             range = [0, 1, 2, 3, 4]
         requirements = Requirements.objects.values('id').filter(pdn_lvl__in=range, defensible__gt=0)
-        print(requirements)
-        return requirements
+        for r in requirements:
+            reqList.append(r["id"])
+        print(reqList)
+        return reqList
 

@@ -68,7 +68,7 @@ function buildSziList(){ //отправка запроса на сервер
             idList[count] = idSzi.substr(15);
             count++;
         }
-    i++;
+        i++;
     }
     $.ajax({
         url: 'http://127.0.0.1:8000/build_szi_list/',
