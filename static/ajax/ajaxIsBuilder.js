@@ -61,9 +61,7 @@ function buildSziList(){ //отправка запроса на сервер
         if ($('#notUsingVirtual').is(':checked') == false) return ""
     }
     /*szi*/
-    let sziList;
-    let countOs = 2; //listOsCheck при добавлении ос прибавить
-    while (i < n){
+    while (i < n){ // выясняем, какие сзи есть в системе
         if ($('#inlineFormCheck'+i).is(':checked') == true){
             idSzi = $('#inlineFormCheck'+i).attr('id');
             console.log(idSzi.substr(15));
