@@ -130,17 +130,17 @@ function buildData(sziList, reqList){
     for(i = 0; i < sziList.length; i++){//вывод сзи на страницу build
         if (sziList[i]["fields"]["def_os"] == 1) {
             console.log(i);
-            osOnCl = '<input type="checkbox" style = "position: relative; left 5px; class="form-check-input listOsCheck1" value=""><label>'+sziList[i]["fields"]["def_name"]+'</label><br>';
+            osOnCl = '<input id="inlineFormCheck'+sziList[i]["pk"]+'" type="checkbox" style = "position: relative; left 5px; class="form-check-input listOsCheck1" value=""><label>'+sziList[i]["fields"]["def_name"]+'</label><br>';
             $('#osOnClient').append(osOnCl);
         }
         if (sziList[i]["fields"]["def_os"] == 2) {
             console.log(i);
-            osOnSer = '<input type="checkbox" style = "position: relative; left 5px; class="form-check-input listOsCheck1" value=""><label>'+sziList[i]["fields"]["def_name"]+'</label><br>';
+            osOnSer = '<input id="inlineFormCheck'+sziList[i]["pk"]+'" type="checkbox" style = "position: relative; left 5px; class="form-check-input listOsCheck1" value=""><label>'+sziList[i]["fields"]["def_name"]+'</label><br>';
             $('#osOnServer').append(osOnSer);
         }
         if (sziList[i]["fields"]["def_os"] == 0) {
             label = '<H3>'+sziList[i]["fields"]["def_name"]+'</H3>';
-            $("#sziOnPr").append('<input id="inlineFormCheck'+i+'" type="checkbox" class="form-check-input" value="'+sziList[i]["pk"]+'">'+label+'<Br>');
+            $("#sziOnPr").append('<input id="inlineFormCheck'+sziList[i]["pk"]+'" type="checkbox" class="form-check-input" value="'+sziList[i]["pk"]+'">'+label+'<Br>');
         }
     }
 }

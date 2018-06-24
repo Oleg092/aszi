@@ -84,8 +84,7 @@ class Requirements(models.Model):
         default=True,
     )
 
-    pdn_lvl = models.CharField(
-        max_length=1,
+    pdn_lvl = models.IntegerField(
     )
 
     def __str__(self):

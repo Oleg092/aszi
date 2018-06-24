@@ -38,30 +38,59 @@ function tglBuilMenuPg(Page){// работа кнопочек навигацио
 
 
 function buildSziList(){ //отправка запроса на сервер
-    var n = 90000;
-    var i = 0;
-    var pdnLevel = $('#defLevel').val();
-    var amountArm = $('#amountArm').val();
-    var amountServ = $('#amountServ').val();
-    var listOsCheck;
+    let n = 51;
+    let i = 1;
+    let count = 0;
+    let idSzi = '';
+    let idList = [];
+    let pdnLevel = $('#defLevel').val();
+    let amountArm = $('#amountArm').val();
+    let amountServ = $('#amountServ').val();
+    let listOsCheck;
     /*structure*/
-    var notUsingWireless = $('#notUsingWireless').is(':checked');
-    var notUsingMobile = $('#notUsingMobile').is(':checked');
-    var notUsingVirtual = $('#notUsingVirtual').is(':checked');
-    /*coast*/
-    var licenseOnHost = $('#licenseOnHost').is(':checked');
-    var technicalSupport = $('#technicalSupport').is(':checked');
-    var teachingSlave = $('#teachingSlave').is(':checked');
-    var acquisitionCost = $('#acquisitionCost').is(':checked');
+    let notUsingWireless = () => {
+        if ($('#notUsingWireless').is(':checked') == true) return "True"
+        if ($('#notUsingWireless').is(':checked') == false) return ""//пятон будет преобразовывать это в false
+    }
+    let notUsingMobile = () => {
+        if ($('#notUsingMobile').is(':checked') == true) return "True"
+        if ($('#notUsingMobile').is(':checked') == false) return ""
+    }
+    let notUsingVirtual = () => {
+        if ($('#notUsingVirtual').is(':checked') == true) return "True"
+        if ($('#notUsingVirtual').is(':checked') == false) return ""
+    }
     /*szi*/
-    var sziList;
-    var countOs = 2; //listOsCheck при добавлении ос прибавить
-    alert(acquisitionCost);
+    let sziList;
+    let countOs = 2; //listOsCheck при добавлении ос прибавить
     while (i < n){
-        if ($('#inlineFormCheck'+i).val() == undefined){
-            break;
+        if ($('#inlineFormCheck'+i).is(':checked') == true){
+            idSzi = $('#inlineFormCheck'+i).attr('id');
+            console.log(idSzi.substr(15));
+            idList[count] = idSzi.substr(15);
+            count++;
         }
-    console.log($('#inlineFormCheck'+i).is(':checked'));
     i++;
     }
+    $.ajax({
+        url: 'http://127.0.0.1:8000/build_szi_list/',
+        type: 'POST',
+        data:{
+                csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
+                listSzi: idList,
+                pdnLevel: pdnLevel,
+                amountArm: amountArm,
+                amountServ: amountServ,
+                notUsingWireless: notUsingWireless,
+                notUsingMobile: notUsingMobile,
+                notUsingVirtual: notUsingVirtual,
+
+            },
+        success: function(data) {
+
+        },
+        failure: function(data) {
+            console.log('Bad request');
+        }
+    });
 }
