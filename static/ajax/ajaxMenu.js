@@ -63,6 +63,8 @@ function management(reqList){ // вывод спискасписок реква�
 
 function catalogReq(sziList, reqList){
     $("#pageCatalogue1").empty();
+    var req = '';
+    $("#requirCheck").empty();
     var catalog;
     var labelDesc;
     var idReq;
@@ -72,10 +74,6 @@ function catalogReq(sziList, reqList){
             catalog = '<div id="szi'+i+'" class="sziInCatalogue"><div class="sziInfo"><h5>Szi Info</h5>'+sziList[i]["fields"]["def_name"]+'</br>'+sziList[i]["fields"]["def_dev"]+'</br><label>Сертефицирован до: <label>'+sziList[i]["fields"]["def_cert"]+'</div>'+labelDesc+'</div>';
             $('#pageCatalogue1').append(catalog);
         }
-    }
-    var req = '';
-    $("#requirCheck").empty();
-    for(i=0; i < sziList.length; i++){// пробегаемся по всем сзи
         for(j=0; j < sziList[i]["fields"]["requirements"].length; j++){//а теперь по всем реквариментсам которые они покрывают
             idReq = sziList[i]["fields"]["requirements"][j];
             req += '<h6>'+reqList[idReq]["fields"]["require"]+'</h6>'+reqList[idReq]["fields"]["description"]+'<br><br>';
@@ -84,6 +82,7 @@ function catalogReq(sziList, reqList){
         $("#szi"+i+"").append(reqListInCat);
         req = '';
     }
+
 }
 
 function getUserList(){

@@ -19,6 +19,9 @@ class BuildSziList():
     def adaptationLevel2(self, notUsingVirtual, notUsingWireless, notUsingMobile, reqList):
         """Тоже адаптация, не знаю как обозвать"""
 
+    def getListPrice(self):
+        """the class match szi with coast"""
+
     @staticmethod
     def getReqList(pdnLvl):
         """достаем список мер исходя из выбранного пользуном предполагаемого уровня защищенности"""
