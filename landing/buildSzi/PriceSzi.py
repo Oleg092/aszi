@@ -1,7 +1,7 @@
 from landing.buildSzi.BuildSziList import BuildSziList
 
 
-class priceSzi(BuildSziList):
+class PriceSzi(BuildSziList):
     def __init__(self, sziList):
         self.sziList = sziList
 

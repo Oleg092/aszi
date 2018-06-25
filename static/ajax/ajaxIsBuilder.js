@@ -105,11 +105,9 @@ function showSziOnPage(sziList){
     var ct2='';
     var sumct='';
     let sum = 0;
-    let coast1 = 131;
-    let coast2 = 300;
-    let coast3 = 430;
-    let coast4 = 200;
-    let coast5 = 840;
+    let coast1 = 13100;
+    let coast2 = 30000;
+    var allSum = 0;
     for(i = 0; i < sziList.length; i++){//вывод сзи на страницу resultBuild
         if (sziList[i]["fields"]["def_os"] == 0) {
             labelDesc = '<div class = "descSzi"><h5>Szi Description</h5>'+sziList[i]["fields"]["def_desc"]+'</div>'
@@ -118,15 +116,13 @@ function showSziOnPage(sziList){
         }
         coast1 = coast1 * (i+1);
         coast2 = coast2 * (i+1);
-        coast3 = coast3 * (i+1);
-        coast4 = coast4 * (i+1);
-        coast5 = coast5 * (i+1);
-        sum = coast1 + coast2 + coast3 + coast4 + coast5;
-        ct = '<h6>coast1</h6>'+coast1+'<br><h6>coast2</h6>'+coast2+'<br><h6>coast3</h6>'+coast3+'<br>';
-        ct2 = '<h6>coast4</h6>'+coast4+'<br><h6>coast5</h6>'+coast5+'<br>';
-        sumct = '<h6>Общая стоимость</h6>'+sum+'';
-        reqListInCat = '<div class="sziReqCatalogue"><h5 style = "position: sticky; top: 0px; background: white;">Coast List</h5>'+ct + ct2 + sumct +'</div>';
+        sum = coast1 + coast2;
+        ct = '<h6>Стоимость СрЗИ</h6>'+coast1+' rub<br><h6>Стоимость тех поддержки</h6>'+coast2+' rub';
+        sumct = '<h6>Общая стоимость</h6>'+sum+' rub';
+        reqListInCat = '<div class="sziReqCatalogue"><h5 style = "position: sticky; top: 0px; background: white;">Coast List</h5>'+ct + sumct +'</div>';
         $("#sziC"+i+"").append(reqListInCat);
-        req = '';
+        allSum += sum
+
     }
+    $('#allSum').append('<h5>Общая стоимость внедрения:</h5>'+allSum+' rub')
 }
