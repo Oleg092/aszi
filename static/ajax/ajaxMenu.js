@@ -85,7 +85,7 @@ function catalogReq(sziList, reqList){
 
 }
 
-function getUserList(){
+let UserList = () => {
     $.ajax({
         url: 'http://127.0.0.1:8000/getUserList/',
         type: 'POST',
@@ -94,27 +94,29 @@ function getUserList(){
             },
         success: function(data) {
             var userList = JSON.parse(data);
-            showUsers(userList);
+            showUsers(userList)
 
         },
         failure: function(data) {
 
         }
     });
-}
+};
 
 function showUsers(userList){ // вывод списка юзеров
+    let users = userList;
     $('#userListR').empty();
-    var user;
-    var email;
-    var firstName;
-    var lastName;
-    var btn;
-    for(i=0; i < userList.length; i++){
-        email = '<div class = "userList"><label>'+userList[i]["fields"]["email"]+'</label></div>';
-        firstName = '<div class = "userList"><label>'+userList[i]["fields"]["firstname"]+'</label></div>';
-        lastName = '<div class = "userList"><label>'+userList[i]["fields"]["lastname"]+'</label></div>';
-        btn = '<div class="userList" id="'+userList[i]["pk"]+'"><button class="btn">Edit</button></div>';
+    let user;
+    let email;
+    let firstName;
+    let lastName;
+    let btn;
+    console.log(users);
+    for(i=0; i < users.length; i++){
+        email = '<div class = "userList"><label>'+users[i]["fields"]["email"]+'</label></div>';
+        firstName = '<div class = "userList"><label>'+users[i]["fields"]["firstname"]+'</label></div>';
+        lastName = '<div class = "userList"><label>'+users[i]["fields"]["lastname"]+'</label></div>';
+        btn = '<div class="userList" id="'+users[i]["pk"]+'"><button class="btn">Edit</button></div>';
         user = '<div class="userListR">' + email + firstName + lastName + btn + '</div>';
         $('#userListR').append(user);
     }
