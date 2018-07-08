@@ -49,17 +49,17 @@ let buildSziList = () => { //отправка запроса на сервер
     let listOsCheck;
     /*structure*/
     let notUsingWireless = () => {
-        if ($('#notUsingWireless').is(':checked') == true) return "True"
+        if ($('#notUsingWireless').is(':checked') == true) return "True";
         if ($('#notUsingWireless').is(':checked') == false) return ""//пятон будет преобразовывать это в false
-    }
+    };
     let notUsingMobile = () => {
-        if ($('#notUsingMobile').is(':checked') == true) return "True"
+        if ($('#notUsingMobile').is(':checked') == true) return "True";
         if ($('#notUsingMobile').is(':checked') == false) return ""
-    }
+    };
     let notUsingVirtual = () => {
-        if ($('#notUsingVirtual').is(':checked') == true) return "True"
+        if ($('#notUsingVirtual').is(':checked') == true) return "True";
         if ($('#notUsingVirtual').is(':checked') == false) return ""
-    }
+    };
     /*szi*/
     while (i < n){ // выясняем, какие сзи есть в системе
         if ($('#inlineFormCheck'+i).is(':checked') == true){

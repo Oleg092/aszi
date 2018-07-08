@@ -1,4 +1,4 @@
-function getReqList(fName){ //запрос списка требований и передача их в функцию обработки
+let getReqList = (fName) => { //запрос списка требований и передача их в функцию обработки
     $.ajax({
         url: 'http://127.0.0.1:8000/get_req_list/',
         type: 'POST',
@@ -23,7 +23,7 @@ function getReqList(fName){ //запрос списка требований и 
     });
 }
 
-function catalogue(reqList, fName){
+let catalogue = (reqList, fName) => {
     $.ajax({
         url: 'http://127.0.0.1:8000/getSziList/',
         type: 'POST',
@@ -44,12 +44,12 @@ function catalogue(reqList, fName){
 
         }
     });
-}
+};
 
 function feedback(){
 //feedback
 }
-function management(reqList){ // вывод спискасписок реквариментов для страницы management
+let management = (reqList) => { // вывод спискасписок реквариментов для страницы management
     $("#requirCheck").empty();
     console.log(reqList.length);
     console.log(reqList[1]["fields"]["description"])
@@ -59,9 +59,9 @@ function management(reqList){ // вывод спискасписок реква�
         $("#requirCheck").append('<input id="inlineFormCheck'+i+'" type="checkbox" class="form-check-input" value="'+reqList[i]["pk"]+'">'+label+'<Br>');
 
     }
-}
+};
 
-function catalogReq(sziList, reqList){
+let catalogReq = (sziList, reqList) => {
     $("#pageCatalogue1").empty();
     var req = '';
     $("#requirCheck").empty();
@@ -83,7 +83,7 @@ function catalogReq(sziList, reqList){
         req = '';
     }
 
-}
+};
 
 let UserList = () => {
     $.ajax({
@@ -103,7 +103,7 @@ let UserList = () => {
     });
 };
 
-function showUsers(userList){ // вывод списка юзеров
+let showUsers = (userList) => { // вывод списка юзеров
     let users = userList;
     $('#userListR').empty();
     let user;
@@ -120,9 +120,9 @@ function showUsers(userList){ // вывод списка юзеров
         user = '<div class="userListR">' + email + firstName + lastName + btn + '</div>';
         $('#userListR').append(user);
     }
-}
+};
 
-function buildData(sziList, reqList){
+let buildData = (sziList, reqList) => {
     let osOnCl;
     let osOnSer;
     $("#sziOnPr").empty();
@@ -144,9 +144,9 @@ function buildData(sziList, reqList){
             $("#sziOnPr").append('<input id="inlineFormCheck'+sziList[i]["pk"]+'" type="checkbox" class="form-check-input" value="'+sziList[i]["pk"]+'">'+label+'<Br>');
         }
     }
-}
+};
 
-function measures(reqList){//вывод список реков на страницу measures
+let measures = (reqList) => {//вывод список реков на страницу measures
     $('#reqListR').empty();
     var req;
     var require;
@@ -159,4 +159,4 @@ function measures(reqList){//вывод список реков на стран�
         req = '<div class="reqListR">' + require + description + pdn_lvl + '</div>';
         $('#reqListR').append(req);
     }
-}
+};
