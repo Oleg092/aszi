@@ -1,8 +1,8 @@
-function tglBuilMenuPg(Page){// работа кнопочек навигационного меню
+let tglBuilMenuPg = (Page) => {// работа кнопочек навигационного меню
     $('#nextPage').show();
     $('#sendData').hide();
-    var flag;
-    var i = 1;
+    let flag;
+    let i = 1;
     if (Page == 'next'){
         while (i < 4){
             if($('#flag'+i+'').html() == 'active'){
@@ -20,7 +20,7 @@ function tglBuilMenuPg(Page){// работа кнопочек навигацио
     }
     console.log(Page);
     flag = '#flag';
-    var content;
+    let content;
     content = '#buildLevel';
     content += Page;
     flag += Page;
@@ -32,12 +32,12 @@ function tglBuilMenuPg(Page){// работа кнопочек навигацио
         $('#nextPage').hide();
         $('#sendData').show();
     }
-}
+};
 
 
 
 
-function buildSziList(){ //отправка запроса на сервер
+let buildSziList = () => { //отправка запроса на сервер
     let n = 51;
     let i = 1;
     let count = 0;
@@ -93,21 +93,21 @@ function buildSziList(){ //отправка запроса на сервер
             console.log('Bad request');
         }
     });
-}
+};
 
-function showSziOnPage(sziList){
+let showSziOnPage = (sziList) => {
     $("#buildSzi").empty();
     $("#myModalBox").modal('show');
-    var catalog;
-    var labelDesc;
-    var coast = '';
-    var ct='';
-    var ct2='';
-    var sumct='';
+    let catalog;
+    let labelDesc;
+    let coast = '';
+    let ct='';
+    let ct2='';
+    let sumct='';
     let sum = 0;
     let coast1 = 13100;
     let coast2 = 30000;
-    var allSum = 0;
+    let allSum = 0;
     for(i = 0; i < sziList.length; i++){//вывод сзи на страницу resultBuild
         if (sziList[i]["fields"]["def_os"] == 0) {
             labelDesc = '<div class = "descSzi"><h5>Szi Description</h5>'+sziList[i]["fields"]["def_desc"]+'</div>'
@@ -125,4 +125,4 @@ function showSziOnPage(sziList){
 
     }
     $('#allSum').append('<h5>Общая стоимость внедрения:</h5>'+allSum+' rub')
-}
+};
